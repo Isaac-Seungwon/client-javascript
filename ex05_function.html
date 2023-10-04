@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function m1() {
+            console.log('m1 함수 호출');
+        }
+
+        m1(); //m1 함수 호출
+
+        function m2(name) {
+            console.log('name: ' + name);
+
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+        }
+
+        m2('Isaac'); //name: Isaac
+        m2('Sopia'); //name: Sopia
+        m2(); //name: undefined (사용 X)
+        m2('Isaac', 'Sopia'); //name: Isaac (사용 X)
+
+        function m3(name, age) {
+            console.log(name, age);
+            console.log(name + ' ' + age);
+        }
+
+        console.log('Isaac', 20);
+
+        var num1 = null;
+        console.log(num1); //null
+
+        var num2;
+        console.log(num2); //undefined
+
+        console.log(undefined == null); //true
+        console.log(undefined === null); //false
+        console.log(undefined != null); //false
+        console.log(undefined !== null); //true
+
+        console.log(10 == '10'); //true
+        console.log(10 === '10'); //false
+
+
+        function m4() {
+            return 100;
+        }
+
+        console.log(m4());
+    </script>
+</body>
+</html>

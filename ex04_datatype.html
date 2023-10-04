@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num;
+        num = 10;
+        var num2 = 3.14;
+        var num3, num4;
+        var num5 = 10, num6 = 20; //숫자형
+        var name = "Isaac"; //문자형
+        var flag = true; //논리형
+        var now = new Date(); //객체형
+
+        console.log(typeof 100); //number
+        console.log(typeof 3.14); //number
+        console.log(typeof num); //number
+        console.log(typeof 'Isaac'); //string
+        console.log(typeof "Isaac"); //string
+        console.log(typeof name); //string
+        console.log(typeof true); //boolean
+        console.log(typeof new Date()); //object
+
+        console.log('10' + 2); //102
+        console.log('10' * 2); //20
+        console.log(2 + '10'); //210
+
+        //문자 이스케이프
+        //-자바와 동일하다
+        console.log('C:\class\java'); //X
+        console.log('C:\\class\\java');
+    </script>
+</body>
+</html>
