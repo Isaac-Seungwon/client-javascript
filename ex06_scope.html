@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = 100; //전역 변수
+
+        function m1() {
+            var num2 = 200; //지역 변수
+            console.log('num2', num2);
+        }
+
+        m1();
+
+        if (num1 > 0) {
+            console.log('참');
+            var num3 = 300; //전역 변수
+            console.log('num3', num3);
+        }
+        console.log('num3', num3);
+
+        var num4 = 400; //전역 변수
+        num5 = 400; //전역 변수
+
+        function m2() {
+            var num6 = 600; //지역 변수
+            num7 = 700; //지역 변수(X) 전역 변수(O)
+        }
+        m2();
+        console.log(num7);
+        
+
+    </script>
+</body>
+</html> 
