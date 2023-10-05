@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>location 객체</h1>
+
+    <!-- <form name="form1">
+        <input type="button" name="btn1" value="버튼">
+    </form> -->
+
+    <ul>
+        <li><a href="https://www.naver.com">네이버(n)</a></li>
+        <li><a href="https://www.google.com">구글(g)</a></li>
+        <li><a href="https://www.daum.net">다음(d)</a></li>
+    </ul>
+
+    <script>
+        // window.document.form1.btn1.onclick = m1;
+
+        // function m1() {
+        //     // console.log(window.location.href); //읽기
+
+        //     window.location.href = 'https://isaac-christian.tistory.com/';
+
+        //     window.location.reload(); //새로고침(F5)
+
+        //     window.location.assign('https://isaac-christian.tistory.com/');
+        // }
+
+        window.onkeydown = m2;
+
+        function m2() {
+            //alert(event.keyCode);
+            if (event.keyCode == 78) {
+                window.location.href = 'https://www.naver.com';
+            } else if (event.keyCode == 71) {
+                window.location.href = 'https://www.google.com';
+            } else if (event.keyCode == 68) {
+                window.location.href = 'https://www.daum.net';
+            }
+        }
+    </script>
+</body>
+</html>
