@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>window 객체</h1>
+
+    <!-- <form name="form1">
+        <fieldset>
+            <legend>창 제어하기</legend>
+            <input type="button" value="자식창 띄우기" name="pbtn1">
+            <input type="button" value="자식창 닫기" name="pbtn2">
+        </fieldset>
+        <fieldset>
+            <legend>다른 창의 자원 접근하기</legend>
+            <input type="button" value="자식창에 있는 텍스트박스에 접근하기" name="pbtn3">
+            <input type="text" name="ptxt1">
+        </fieldset>
+    </form>
+
+    <hr> -->
+
+    <h2>아이디 중복검사 / 우편번호 검색하기</h2>
+
+    <form name="form2">
+        아이디: <input type="text" id="txtid" size="10">
+                <input type="button" value="중복검사" id="btncheck">
+    </form>
+
+    <script>
+        // var pbtn1 = window.document.form1.pbtn1;
+        // var pbtn2 = window.document.form1.pbtn2;
+        // var pbtn3 = window.document.form1.pbtn3;
+        // var ptxt1 = window.document.form1.ptxt1;
+        // var child
+        var btncheck = window.document.form2.btncheck;
+
+        // pbtn1.onclick = m1;
+        // pbtn2.onclick = m2;
+        // pbtn3.onclick = m3;
+        btncheck.onclick = m4;
+
+        // function m1() {
+        //     child = window.open('ex16_child.html', 'child', 'width=500 height=300 left=0 top=0');
+        // }
+        
+        // function m2() {
+        //     child.close(); //window.close();
+        // }
+
+        // function m3() {
+        //     //부모창에서 자식창의 자원 접근
+        //     child.document.form1.ctxt1.value = '동민아 느그 아버지 어디가셨노?';
+        //     child.document.form1.cbtn1.value = '클릭';
+        //     child.document.form1.ctxt1.size += 5;
+        //     child.document.body.bgColor = 'gold';
+        // }
+
+        function m4() {
+            window.open('ex16_idcheck.html', 'idcheck', 'width=500 height=400');
+        }
+    </script>
+</body>
+</html>
