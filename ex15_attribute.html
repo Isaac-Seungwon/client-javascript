@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript로 태그의 속성 제어하기</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="버튼" name="btn1">
+    </form>
+
+    <script>
+        var txt1 = window.document.form1.txt1;
+        var btn1 = window.document.form1.btn1;
+
+        btn1.onclick = m1;
+
+        function m1() {
+            //txt1.value = 'Isaac'; //쓰기
+            //alert(txt1.value); //읽기
+            //txt1.size++;
+            //txt.maxLength = 5;
+            //txt.readOnly = true;
+            //<body bgcolor="blue">
+            //window.document.body.bgColor = 'blue';
+            //txt1.type = 'radio'; //타입을 바꾸는 행동 X
+            //txt2.name = 'txt2'; //식별자를 바꾸는 행동 X
+            //window.document.body.bgColor = '#000';
+
+            if (btn1.value != '켜기') {
+                window.document.body.bgColor = '#000';
+                btn1.value = '켜기';
+            } else {
+                window.document.body.bgColor = '#FFF';
+                btn1.value = '끄기';
+            }
+        }
+    </script>
+</body>
+</html>
