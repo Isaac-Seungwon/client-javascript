@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var now = new Date(); //new 생성자함수();
+        console.log(now);
+        console.log(typeof now); //object
+
+        console.log(now.getYear());
+        console.log(now.getFullYear());
+        console.log(now.getMonth());
+        console.log(now.getDate());
+        console.log(now.getDay());
+        console.log(now.getHours());
+        console.log(now.getMinutes());
+        console.log(now.getSeconds());
+        console.log(now.getMilliseconds());
+        console.log(now.getTime());
+        
+        console.log(now.toString());
+        console.log(now.toLocaleString());
+        console.log(now.toLocaleDateString());
+        console.log(now.toLocaleTimeString());
+
+        var christmas = new Date();
+        christmas.setFullYear(2023);
+        christmas.setMonth(11);
+        christmas.setDate(25);
+        christmas.setHours(12);
+        christmas.setMinutes(0);
+        christmas.setSeconds(0);
+        console.log(christmas.toLocaleString());
+
+        var birthday = new Date(1995, 10, 10, 12, 30, 0);
+        console.log(birthday.toLocaleString());
+
+        console.log(christmas - now);
+        console.log((christmas - now) / 1000 / 60 / 60 / 24);
+
+        var aniversary = new Date(2023, 10, 2, 21, 30, 0);
+        aniversary.setTime(now.getTime() + (100 * 24 * 60 * 60 * 1000)); //100일 뒤
+        console.log(aniversary.toLocaleString());
+    </script>
+</body>
+</html>
