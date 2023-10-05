@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n1 = 3.99;
+        console.log(parseInt(n1)); //실수 > 정수
+
+        var n2 = '300';
+        console.log(n2, typeof n2);
+        console.log(parseInt(n2), typeof parseInt(n2)); //문자열
+
+        var n3 = 'Issac';
+        console.log(parseInt(n3)); //NaN
+
+        var n4 = '100점';
+        console.log(parseInt(n4)); //100
+
+        n4 = 'score90';
+        console.log(parseInt(n4)); //NaN
+
+        n4 = '100점이 아니라 95점입니다.';
+        console.log(parseInt(n4)); //100
+
+        var width = '200px';
+        console.log(width + 100); //200px100
+
+        console.log(parseInt(width) + 100); //300
+        
+        
+        var size = '1.5em';
+        console.log(parseInt(size));
+        console.log(parseFloat(size));
+
+        //사용자 나이 입력
+        var age = '25세';
+
+        console.log(isNaN(age));
+
+        if (isNaN(age)) {
+            console.log('나이가 올바르지 않습니다.');
+        } else {
+            console.log('올바른 나이입니다.');
+        }
+
+        age = 25;
+
+        if (isNaN(age)) {
+            console.log('나이가 올바르지 않습니다.');
+        } else {
+            console.log('올바른 나이입니다.');
+        }
+
+    </script>
+</body>
+</html>
