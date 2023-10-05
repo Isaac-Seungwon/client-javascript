@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event</h1>
+
+    <form name="form1">
+        <input type="text" name="txt1">
+        <input type="button" value="버튼" name="btn3">
+        <!-- <input type="button" value="버튼" name="btn1" onclick="window.document.form1.txt1.value = 'Isaac';"> -->
+        <!-- <input type="button" value="버튼" name="btn2" onclick="m1();"> -->
+    </form>
+
+    <script>
+        // function m1() {
+        //     window.document.form1.txt1.value = 'Sopia';
+        // }
+        window.document.form1.btn3.onclick = m3;
+
+        function m3() {
+            window.document.form1.txt1.value = 'Isaac';
+        }
+    </script>
+</body>
+</html>
