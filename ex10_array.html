@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nums = new Array();
+
+        nums[0] = 100;
+        nums[1] = 200;
+        nums[2] = 300;
+        //nums[3] = 400;
+        //nums[4] = 500;
+        nums[5] = 600;
+
+        for (var i=0; i<nums.length; i++){
+            console.log(i, nums[i]);
+        }
+
+        var num2 = new Array(100, 200, 300);
+        var num3 = [ 100, 200, 300 ];
+
+        console.log(num2);
+        console.log(num3);
+
+        var num4 = new Array();
+        var num5 = []; //*** 주로 사용
+
+        //3의 배수 10개 만들기 첫 번째 방법
+        var list1 = [];
+
+        for (var i=0; i<10; i++) {
+            list1[i] = (i + 1) * 3;
+        }
+
+        console.log(list1);
+
+        //3의 배수 10개 만들기 두 번째 방법
+        var list2 = [];
+
+        for (var i=3; i<=(3*10); i+=3) {
+            list2.push(i); //stack.push(값), list.append(값)
+        }
+
+        console.log(list2);
+        console.log(list2.pop());
+        console.log(list2);
+
+    </script>
+</body>
+</html>
