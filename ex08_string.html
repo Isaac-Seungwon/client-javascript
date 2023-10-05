@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var txt = "Hello world";
+
+        console.log(txt.length); //프로퍼티(Property)
+
+        console.log(txt.indexOf('o')); //4
+        console.log(txt.indexOf('o', 5)); //7
+        console.log(txt.lastIndexOf('o')); //7
+        console.log(txt.lastIndexOf('o', 6)); //4
+
+        console.log(txt.toUpperCase());
+        console.log(txt.toLowerCase());
+
+        console.log(txt.substr(0, 5));
+        console.log(txt.substring(6, 11));
+        console.log(txt.charAt(0));
+        console.log(txt.charCodeAt(0));
+
+        txt = "Hello world Hello friend";
+        console.log(txt.replace('Hello', 'Bye')); //Bye world Hello friend
+        console.log(txt.replace(/Hello/g, 'Bye'));
+
+        txt = '       공       백        ';
+        
+        console.log('@' + txt.trim() + '@');
+        console.log('@' + txt.trimLeft() + '@');
+        console.log('@' + txt.trimStart() + '@');
+        console.log('@' + txt.trimRight() + '@');
+        console.log('@' + txt.trimEnd() + '@');
+
+        txt = 'Isaac,Sopia,Lee';
+
+        console.log(txt.split(','));
+
+        txt = 'Isaac';
+
+        console.log(txt.startsWith('I'));
+        console.log(txt.endsWith('c'));
+
+        txt = '1';
+        
+        console.log(txt.padStart(3, '0'));
+        console.log(txt.padEnd(3, 'A'));
+        console.log(txt.repeat(3, txt));
+
+    </script>
+</body>
+</html>
