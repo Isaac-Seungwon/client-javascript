@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자식 페이지</h1>
+
+    <form name="form1">
+        <input type="button" value="부모창에 있는 텍스트박스 접근하기" name="cbtn1">
+        <input type="text" name="ctxt1">
+    </form>
+
+    <script>
+        var cbtn1 = window.document.form1.cbtn1;
+        var ctxt1 = window.document.form1.ctxt1;
+
+        cbtn1.onclick = m1;
+
+        function m1() {
+            //자식창에서 부모창의 자원 접근
+            opener.document.form1.ptxt1.value = '잘 모르겠심더';
+            opener.document.body.bgColor = 'beige';
+        }
+    </script>
+</body>
+</html>
