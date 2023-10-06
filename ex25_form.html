@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid #CCC;
+            border-collapse: collapse;
+            box-shadow: 0px 0px 3px #CCC;
+            margin-bottom: 10px;
+        }
+        #tbl th, #tbl1 td {
+            border: 1px solid #CCC;
+            padding: 5px 10px;
+        }
+        #tbl1 th {
+            background-color: #EEE;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원 가입</h1>
+    
+    <form name="form1" action="ex25_ok.jsp">
+        <table id="tbl1">
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="txtname"></td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td><input type="number" name="txtage" min="19" max="100"></td>
+            </tr>
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" name="txtid"></td>
+            </tr>
+            <tr>
+                <th>암호</th>
+                <td><input type="password" name="txtpw"></td>
+            </tr>
+            <tr>
+                <th>암호확인</th>
+                <td><input type="password" name="txtpwc"></td>
+            </tr>
+        </table>
+        <input type="button" value="가입하기" name="btnSubmit">
+    </form>
+
+    <script>
+        document.form1.btnSubmit.onclick = m1;
+
+        function m1() {
+            //유효성 검사
+            var txtname = document.form1.txtname;
+            var txtage = document.form1.txtage;
+            var txtid = document.form1.txtid;
+            var txtpw = document.form1.txtpw;
+            var txtpwc = document.form1.txtpwc;
+
+            if (txtname.value == '') {
+                alert('이름을 입력하세요.');
+                txtname.focus();
+                return;
+            }
+
+            if (txtname.value.length < 2 || txtname.value.length > 5) {
+                alert('2~5자 이내의 이름을 입력하세요.');
+                // txtname.value = ''; //텍스트 박스 초기화
+                txtname.select();
+                return;
+            }
+
+            for (var i=0; i<txtname.value.length; i++) {
+                var c = txtname.value.charAt(i);
+
+                if (c < '가' || c > '힣') {
+                    alert('한글만 입력하세요.');
+                    txtname.select();
+                    return;
+                }
+            }
+
+            //나이 확인
+            if (txtage.value == '') {
+                alert('나이를 입력하세요.');
+                txtage.focus();
+                return;
+            }
+
+            //아이디 확인
+            var regex = /[A-Aa-z_][A-Za-z0-9_]{4,12}/; //정규식 객체
+
+            if (!regex.text(txtid.value)) {
+                alert('아이디가 올바르지 않습니다.');
+                txtid.select();
+                return;
+            }
+
+            //암호 확인
+            if (txtpw.value != txtpwc.value) {
+                alert('암호가 동일하지 않습니다');
+                txtpw.focus();
+                return;
+            }
+
+            document.form1.submit(); //폼 전송 함수
+        }
+    </script>
+</body>
+</html>

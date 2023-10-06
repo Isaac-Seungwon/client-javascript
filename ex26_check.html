@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>체크 박스</h1>
+    
+    <form name="form1">
+        <input type="checkbox" name="cb1">
+        <input type="button" value="버튼" name="btn1">
+    </form>
+
+    <script>
+        document.form1.btn1.onclick = m1;
+
+        function m1() {
+            document.form1.cb1.checked = !document.form1.cb1.checked;
+        }
+    </script> -->
+
+    <h1>장바구니</h1>
+
+    <table border width="500">
+        <tr>
+            <th><input type="checkbox" name="cball"></th>
+            <th>상품명</th>
+            <th>수량</th>
+            <th>가격</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="cbitem"></td>
+            <td>노트북</td>
+            <td>1</td>
+            <td>2,000,000원</td>
+        </tr>
+    </table>
+
+    <script>
+        document.all.cball.onchange =  m2;
+
+        function m2() {
+            // if (event.target.checked) {
+            //     for (var i=0; i<document.all.cbitem.length; i++) {
+            //         document.all.cbitem[i].checked = true;
+            //     }
+            // } else {
+            //     for (var i=0; i<document.all.cbitem.length; i++) {
+            //         document.all.cbitem[i].checked = false;
+            //     }
+            // }
+
+            for (var i=0; i<document.all.cbitem.length; i++) {
+                document.all.cbitem[i].checked = event.target.checked;
+            }
+        }
+    </script>
+</body>
+</html>

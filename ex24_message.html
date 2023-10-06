@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>메시지 박스</h1>
+
+    <form name="form1">
+        <input type="button" value="버튼1" name="btn1">
+        <input type="button" value="버튼2" name="btn2">
+        <input type="button" value="버튼3" name="btn3">
+    </form>
+
+    <script>
+        document.form1.btn1.onclick = m1;
+        document.form1.btn2.onclick = m2;
+        document.form1.btn3.onclick = m3;
+
+        function m1() {
+            alert(100);
+            alert('메시지');
+        }
+
+        function m2() {
+            var result = confirm('메시지');
+
+            if (result) {
+                document.body.bgColor = 'cornflowerblue';
+            }
+        }
+
+        function m3() {
+            prompt('메시지', '입력');
+            var name = prompt('이름을 입력하시오', '');
+            alert(name);
+        }
+    </script>
+</body>
+</html>
