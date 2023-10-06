@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            border: 1px solid #CCC;
+            background-color: #EEE;
+            padding: 10px;
+            width: 400px;
+            text-align: center;
+            margin: 15px;
+        }
+        .item > input[type=button] {
+            border: 1px solid #CCC;
+            background-color: #FFF;
+            width: 100px;
+            height: 60px;
+            margin: 10px;
+            outline: none;
+        }
+        .item > input[type=button]:hover {
+            box-shadow: 0px 0px 10px #CCC;
+        }
+    </style>
+</head>
+<body>
+    <h1>다량의 요소의 이벤트 처리 (일괄 처리)</h1>
+
+    <img src = "../asset/images/dog01.jpg" name="dog">
+    <img src = "../asset/images/dog02.jpg" name="dog">
+    <img src = "../asset/images/dog03.jpg" name="dog">
+    <img src = "../asset/images/dog04.jpg" name="dog">
+    <img src = "../asset/images/dog05.jpg" name="dog">
+
+    <hr>
+
+    <img src = "../asset/images/cat01.jpg" name="cat">
+
+    <script>
+        //alert(document.images['dog'].length); //X
+
+        for (var i=0; i<document.images.length; i++) {
+            if (document.images[i].name == 'dog') {
+                document.images[i].onclick = m14;
+                // document.images[i].onmouseover = m14;
+            }
+
+            function m14() {
+                if (event.target.width == 250) {
+                    event.target.width = 500;
+                } else {
+                    event.target.width = 250;
+                }
+            }
+        }
+    </script>
+
+    <!-- <form name="form1">
+
+        <div class="item">
+            <input type="button" name="btnRed" value="빨강">
+            <input type="button" name="btnYellow" value="노랑">
+            <input type="button" name="btnBlue" value="파랑">
+        </div>
+
+        <div class="item">
+            <input type="button" name="btnRed" value="빨강">
+            <input type="button" name="btnYellow" value="노랑">
+            <input type="button" name="btnBlue" value="파랑">
+        </div>
+
+        <div class="item">
+            <input type="button" name="btnRed" value="빨강">
+            <input type="button" name="btnYellow" value="노랑">
+            <input type="button" name="btnBlue" value="파랑">
+        </div>
+
+        <div class="item">
+            <input type="button" name="btnRed" value="빨강">
+            <input type="button" name="btnYellow" value="노랑">
+            <input type="button" name="btnBlue" value="파랑">
+        </div> -->
+        
+        <!-- <div class="item">
+            <input type="button" name="btnRed" value="빨강" onclick="m1();">
+            <input type="button" name="btnYellow" value="노랑" onclick="m2();">
+            <input type="button" name="btnBlue" value="파랑" onclick="m3();">
+        </div> -->
+
+        <!-- <div class="item">
+            <input type="button" name="btnRed" value="빨강" onclick="m7('tomato');">
+            <input type="button" name="btnYellow" value="노랑" onclick="m7('gold');">
+            <input type="button" name="btnBlue" value="파랑" onclick="m7('cornflowerblue');">
+        </div> -->
+
+        <!-- <div class="item">
+            <input type="button" name="btnRed" value="빨강" onclick="m8(this);">
+            <input type="button" name="btnYellow" value="노랑" onclick="m8(this);">
+            <input type="button" name="btnBlue" value="파랑" onclick="m8(this);">
+        </div> -->
+
+        <!-- <div class="item">
+            <input type="button" name="btnRed" value="빨강" onclick="m9(this);">
+            <input type="button" name="btnYellow" value="노랑" onclick="m9(this);">
+            <input type="button" name="btnBlue" value="파랑" onclick="m9(this);">
+        </div> -->
+
+        <!-- <div class="item">
+            <input type="button" name="btnRed" value="빨강" data-color="tomato" onclick="m10(this);">
+            <input type="button" name="btnYellow" value="노랑" data-color="gold" onclick="m10(this);">
+            <input type="button" name="btnBlue" value="파랑" data-color="cornflowerblue" onclick="m10(this);">
+        </div> -->
+
+        <!-- <div class="item">
+            <input type="button" name="btnRed" value="빨강" data-color="tomato" onclick="m11();">
+            <input type="button" name="btnYellow" value="노랑" data-color="gold" onclick="m11();">
+            <input type="button" name="btnBlue" value="파랑" data-color="cornflowerblue" onclick="m11();">
+        </div> -->
+
+        <!-- <div class="item">
+            <input type="button" name="btnRed3" value="빨강" data-color="tomato">
+            <input type="button" name="btnYellow3" value="노랑" data-color="gold">
+            <input type="button" name="btnBlue3" value="파랑" data-color="cornflowerblue">
+        </div> -->
+
+        <!-- <div class="item">
+            <input type="button" name="btn" value="빨강" data-color="tomato">
+            <input type="button" name="btn" value="노랑" data-color="gold">
+            <input type="button" name="btn" value="파랑" data-color="cornflowerblue">
+            <input type="button" name="btn" value="주황" data-color="orange">
+            <input type="button" name="btn" value="초록" data-color="yellowgreen">
+        </div>
+    </form> -->
+
+    <script>
+        // function m1() {
+        //     document.body.bgColor = 'tomato';
+        // }
+        // function m2() {
+        //     document.body.bgColor = 'gold';
+        // }
+        // function m3() {
+        //     document.body.bgColor = 'cornflowerblue';
+        // }
+        // function m7(color) {
+        //     document.body.bgColor = color;
+        // }
+
+        // function m8(btn) {
+        //     //alert(obj);
+        //     //alert(btn.name);
+
+        //     var color;
+
+        //     if (btn.name == 'btnRed') {
+        //         color = 'tomato';
+        //     } else if (btn.name == 'btnYellow') {
+        //         color = 'gold';
+        //     } else if (btn.name == 'btnBlue') {
+        //         color = 'cornflowerblue';
+        //     }
+            
+        //     document.body.bgColor = color;
+        // }
+
+        // function m9(btn) {
+        //     document.body.bgColor = btn.name.substr(3);
+        // }
+
+        // function m10(btn) {
+        //     //alert(btn.dataset['color']);
+        //     document.body.bgColor =  btn.dataset['color'];
+        // }
+
+        // function m11(btn) {
+        //     //alert(event.srcElement.name); //비표준(MS)
+        //     //alert(event.target.name); //표준
+        //     document.body.bgColor = event.target.dataset['color'];
+        // }
+
+        // document.form1.btnRed3.onclick = m12;
+        // document.form1.btnYellow3.onclick = m12;
+        // document.form1.btnBlue3.onclick = m12;
+
+        // function m12() {
+        //     document.body.bgColor = event.target.dataset['color'];
+        // }
+
+
+
+        // alert(document.form1.btn.length); //배열
+
+        // for (var i=0; i<document.form1.btn.length; i++) {
+        //     document.form1.btn[i].onclick = m13;
+        // }
+
+        // function m13() {
+        //     document.body.bgColor = event.target.dataset['color'];
+        // }
+
+    </script>
+</body>
+</html>
