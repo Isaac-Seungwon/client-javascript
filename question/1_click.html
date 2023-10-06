@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'GmarketSansMedium';
+            color: #777;
+        }
+        input[type=text] {
+            outline: none;
+        }
+        form {
+            margin: 20px auto;
+        }
+        form > div {
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <script>
+        var txtName, txtAge, txtNick, btnLong, btnShort;
+
+        function init() {
+            txtName = window.document.form1.txtName;
+            txtAge = window.document.form1.txtAge;
+            txtNick = window.document.form1.txtNick;
+            btnLong = window.document.form1.btnLong;
+            btnShort = window.document.form1.btnShort;
+
+            btnLong.onclick = resizeLong;
+            btnShort.onclick = resizeShort;
+        }
+
+        function resizeLong() {
+            txtName.size = 50;
+            txtAge.size = 50;
+            txtNick.size = 50;
+        }
+        
+        function resizeShort() {
+            txtName.size = 20;
+            txtAge.size = 20;
+            txtNick.size = 20;
+        }
+    </script>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false' onload='init();'>
+    <form name="form1">
+        <h1>데이터 입력</h1>
+        <div>이름 : <input type="text" name="txtName"></div>
+        <div>나이 : <input type="text" name="txtAge"></div>
+        <div>별명 : <input type="text" name="txtNick"></div>
+        <div>
+            <input type="button" value="Long" name="btnLong">
+            <input type="button" value="Short" name="btnShort">
+        </div>
+    </form>
+</body>
+</html>
