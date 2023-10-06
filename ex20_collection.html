@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이미지</h1>
+    <img src="../asset/images/catty01.png" name="img1">
+    <img src="../asset/images/catty02.png">
+    <img src="../asset/images/catty03.png">
+    <img src="../asset/images/catty04.png">
+    <img src="../asset/images/catty05.png">
+
+    <h1>링크</h1>
+    <a href="https://naver.com" name="link2">네이버</a>
+    <a href="https://google.com">구글</a>
+    <a href="https://daum.net">다음</a>
+
+    <h1>앵커</h1>
+    <a name="a1">앵커1</a>
+    <a name="a2">앵커2</a>
+
+    <h1>폼</h1>
+    <form>
+        <input type="text" name="txt1">
+        <input type="text">
+        <input type="text">
+    </form>
+
+    <form>
+        <input type="checkbox">
+        <input type="radio">
+    </form>
+
+    <script>
+        // console.log(document.images.length);
+        // console.log(document.images[0].src);
+
+        // for (var i=0; i<5; i++){
+        // console.log(document.images[i].src);
+        // }
+
+        // console.log(document.links.length);
+
+        // for (var i=0; i<3; i++){
+        // console.log(document.links[i].href);
+        // }
+
+        // console.log(document.anchors.length);
+
+        // console.log(document.forms.length);
+
+        // document.form1.txt.value = '테스트';
+
+        // console.log(document.forms[0].elements.length);
+        // console.log(document.forms[1].elements.length);
+        
+        // console.log(document.all[0]);
+        // console.log(document.all[1]);
+        // console.log(document.all[2]);
+
+        // document.images[0].width = 200; //index로 접근
+        // document.images.img1.width = 200; //name으로 접근
+        // document.images['img1'].width = 50; //key로 접근
+
+        // document.links[1].target = '_blank';
+        // document.links.link2.target = '_blank';
+        // document.links['link2'].target = '_blank';
+
+        document.forms[0].txt1.value = '값1';
+        document.all['txt1'].value = '값2';
+        document.all.txt1.value = '값3';
+
+    </script>
+</body>
+</html>
