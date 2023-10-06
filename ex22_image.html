@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이미지</h1>
+
+    <img src="../asset/images/0.png" name="num">
+
+    <img src="../asset/images/circle_icon01.png" name="icon">
+
+    <img src="../asset/images/dog01.jpg" name="viewer">
+
+    <!-- <img src="../asset/images/switch_on.png" name="sw"> -->
+
+    <!-- <input type="button" value="버튼" name="btn1">
+
+    <hr>
+
+    <img src="../asset/images/dog01.jpg" name="dog1">
+    
+    <hr>
+
+    <img src="../asset/images/dog01.jpg" name="dog2"> -->
+
+    <!-- <script>
+        document.all['btn1'].onclick = m1;
+
+        function m1() {
+            document.images['dog1'].src = '../asset/images/dog03.jpg';
+        }
+
+        document.images['dog2'].onmouseover = m2;
+        document.images['dog2'].onmouseout = m3;
+
+        function m2() {
+            document.images['dog2'].src = '../asset/images/dog03.jpg';
+        }
+
+        function m3() {
+            document.images['dog2'].src = '../asset/images/dog01.jpg';
+        }
+    </script> -->
+
+    <!-- <script>
+        document.images['sw'].onclick = m1;
+        document.images['sw'].onmouseout = m2;
+
+        function m1() {
+            //alert(document.images['sw'].src.endsWith('switch_on.png'));
+
+            if (document.images['sw'].src.endsWith('switch_on.png')) {
+                document.images['sw'].src = '../asset/images/switch_off.png';
+                document.body.bgColor = '#000';
+            } else {
+                document.images['sw'].src = '../asset/images/switch_on.png';
+                document.body.bgColor = '#FFF';
+            }
+        }
+    </script> -->
+
+  <script>
+        document.images['icon'].onclick = m1;
+        var n = 1;
+
+        function m1() {
+            if (n < 18) {
+                n++;
+            }
+
+            document.images['icon'].src = '../asset/images/circle_icon' + (n + '').padStart(2, '0') + '.png';
+        }
+
+        //방향키로 이미지 이동
+        window.onkeydown = m2;
+        var no = 1;
+
+        function m2() {
+            if (event.keyCode == 37) {
+                no--;
+
+                if (no < 1) {
+                    alert('처음 이미지입니다.');
+                    no++;
+                    return;
+                    //no = 5;
+                }
+            } else if (event.keyCode == 39) {
+                no++;
+
+                if (no > 5) {
+                    alert('마지막 이미지입니다.');
+                    no--;
+                    return;
+                    //no = 1;
+                }
+            }
+
+            document.images['viewer'].src = '../asset/images/dog0' + no + '.jpg';
+
+            if (event.keyCode >= 48 && event.keyCode <= 57) {
+                document.images['num'].src = '../asset/images/' + (event.keyCode - 48) + '.png';
+            }
+        }
+    </script>
+</body>
+</html>
