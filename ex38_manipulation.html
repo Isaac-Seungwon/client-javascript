@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .table {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+        .table td {
+            border: 1px solid gray;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM 조작</h1>
+
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <input type="button" value="버튼4" id="btn4">
+    <hr>
+    <div id="div1"></div>
+
+    <script>
+        document.getElementById('btn1').addEventListener('click', m1);
+        document.getElementById('btn2').addEventListener('click', m2);
+        document.getElementById('btn3').addEventListener('click', m3);
+        document.getElementById('btn4').addEventListener('click', m4);
+
+        var div1 = document.getElementById('div1');
+
+        function m1() {
+            //태그 생성
+            var input = document.createElement('input'); //<input>
+
+            //속성 생성
+            //input.type = 'text'; //BOM
+            //input.size = '50'; //BOM
+
+            var type = document.createAttribute('type'); //type=""
+            type.value = 'text'; //type="text"
+            input.setAttributeNode(type); //<input type="text">
+
+            input.setAttribute('size', '10');
+
+            div1.appendChild(input); //자식으로 추가
+
+            
+            //<p align="center">문단입니다.</p>
+            // div1.innerHTML += <p align="center">문단입니다.</p>
+
+            var p = document.createElement('p'); //<p></p>
+
+            p.setAttribute('align', 'center'); //<p align="center"></p>
+
+            //var txt = document.createTextNode('문단입니다.');
+            //var txt = document.createTextNode();
+            //txt.nodeValue = '문단입니다.';
+
+            p.textContent = '문단입니다.'; //innerText
+
+            div1.appendChild(p);
+        }
+
+        function m2() {
+            //태그 삭제하기
+            //div1.innerHTML = '';
+
+            //<input> 태그만 삭제하기
+            div1.removeChild(div1.lastElementChild);
+        }
+
+        function m3() {
+            // for (var i=1; i<=5; i++) {
+            //     div1.innerHTML += '<img src"../asset/images/dog0' + i + '.jpg">';
+            // }
+
+            // for (var i=0; i<div1.children.length; i++) {
+            //     div1.children[i].addEventListener('click', m4);
+            // }
+
+            for (var i=1; i<=5; i++) {
+                var img = document.createElement('img');
+
+                img.setAttribute('src', '../asset/images/dog0' + i + '.jpg');
+                img.addEventListener('click', m4);
+                div1.appendChild(img);
+            }
+        }
+
+        // function m4() {
+        //     div1.removeChild(event.target);
+        // }
+
+
+
+    function m4() {
+        //3 x 3 테이블을 만들고 이벤트 적용
+        var table = document.createElement('table');
+
+        for (var i=0; i<3; i++) {
+            var tr = document.createElement('tr');
+
+            for (var j=0; j<3; j++) {
+                var td = document.createElement('td');
+                td.textContent = 'item';
+                td.addEventListener('click', m5);
+                tr.appendChild(td);
+            }
+
+            table.appendChild(tr);
+        }
+        table.className = 'table';
+
+        div1.appendChild(table);
+    }
+
+    function m5() {
+        event.target.bgColor = 'tomato';
+    }
+    </script>
+</body>
+</html>

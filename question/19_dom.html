@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../asset/question.css">
+    <title>Document</title>
+    <style>
+        #place {
+            border: 1px solid #999;
+            padding: 20px;
+            min-height: 146px;
+        }
+    </style>
+</head>
+
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+    <!--
+    숫자키를 누르면 하단의 박스(div)안에 이미지를 생성하시오.
+    상단 숫자키 사용 가능
+    우측 숫자키패드 사용 가능
+    -->
+
+    <div id="place"></div>
+
+
+    <script>
+
+        var place = document.getElementById("place");
+
+        window.onkeydown = function () {
+
+            if (event.keyCode >= 48 && event.keyCode <= 57) {
+                place.innerHTML += "<img src='images/" + (event.keyCode - 48) + ".png'>";
+            } else if (event.keyCode >= 96 && event.keyCode <= 105) {
+                place.innerHTML += "<img src='images/" + (event.keyCode - 96) + ".png'>";
+            }
+
+        };
+
+    </script>
+</body>
+
+</html>

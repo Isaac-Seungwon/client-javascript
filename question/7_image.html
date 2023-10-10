@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,10 @@
         }
 
         img:hover {
-            border-color: palegoldenrod; /* Change border color on hover */
-            transform: scale(1.1); /* Scale the image slightly on hover */
+            border-color: palegoldenrod;
+            /* Change border color on hover */
+            transform: scale(1.1);
+            /* Scale the image slightly on hover */
         }
 
         input {
@@ -28,27 +31,27 @@
         var list;
         var pw = "";
 
-        window.onload = function() {
+        window.onload = function () {
             list = document.images;
 
-            for (var i=0; i<list.length; i++) {
-                list[i].onmouseover = function(event) {
+            for (var i = 0; i < list.length; i++) {
+                list[i].onmouseover = function (event) {
                     pw += getNum(event.target.dataset['no']);
                     event.srcElement.src = "/asset/images/rect_icon10.png";
                     event.target.style.transition = "transform 0.3s ease-in-out";
                     transform = "scale(1.1)";
                 }
 
-                list[i].onmouseout = function(event) {
-                event.target.style.transition = "transform 0.3s ease-in-out";
-                event.target.style.transform = "scale(1.0)";
-            }
+                list[i].onmouseout = function (event) {
+                    event.target.style.transition = "transform 0.3s ease-in-out";
+                    event.target.style.transform = "scale(1.0)";
+                }
             }
         }
 
         function reset() {
-            for (var i=0; i<list.length; i++) {
-                list[i].src = "/asset/images/rect_icon0" + (i+1) + ".png";
+            for (var i = 0; i < list.length; i++) {
+                list[i].src = "/asset/images/rect_icon0" + (i + 1) + ".png";
             }
             pw = "";
         }
@@ -64,12 +67,13 @@
 
         function getNum(url) {
             var index = url.lastIndexOf(".");
-            return url.substr(index-1, 1);
+            return url.substr(index - 1, 1);
         }
     </script>
 </head>
+
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
-    
+
     <h1 style="text-align: center">Pattern Lock</h1>
     <div style="text-align: center">
         <img src="/asset/images/rect_icon01.png" data-no="1">
@@ -91,4 +95,5 @@
     </div>
 
 </body>
+
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input { display: block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <h1>DOM</h1>
+
+    <form name="form1">
+        <h2 id="title">Control</h2>
+        <div>
+            <input type="text" name="txt1" id="txt1" class="txts">
+            <input type="text" name="txt2" id="txt2" class="txts">
+            <input type="text" name="txt3" id="txt3" class="txts">
+            <input type="button" value="버튼" name="btn1">
+        </div>
+    </form>
+
+    <script>
+        //id 검색
+        //BOM
+        // document.form1.txt1.value = 'BOM';
+
+        //DOM
+        // document.getElementById('txt1').value = 'DOM';
+
+        // alert(document.form1.txt1 === document.getElementById('txt1'));
+
+        // document.getElementById('title').align = 'center';
+
+
+        // //class 검색
+        // var txts = document.getElementsByClassName('txts');
+
+        // for (var i=0; i<txts.length; i++) {
+        //     txts[i].value = i;
+        // }
+
+        // document.getElementsByName('txt1')[0].value = 'DOM';
+
+        // var list = document.getElementsByTagName('input');
+
+        // for (var i=0; i<list.length; i++) {
+        //     //alert(list[i]);
+        //     list[i].value = list[i].name;
+        // }
+
+        document.querySelector('#txt1').value = 100;
+        document.querySelector('h1').align = 'center';
+        document.querySelector('input:nth-child(3)').value = 300;
+        alert(document.querySelectorAll('.txts').length);
+    </script>
+</body>
+</html>

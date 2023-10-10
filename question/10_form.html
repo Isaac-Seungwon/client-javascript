@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../asset/question.css">
+    <title>Document</title>
+    <style type="text/css">
+        #tbl1 {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        #tbl1 th {
+            background-color: #eee;
+        }
+
+        #tbl1 th,
+        #tbl1 td {
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        input {
+            border: 1px solid gray;
+            font-weight: bold;
+            padding: 2px 5px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function check(jumin1) {
+            var year = document.all.year;
+            var month = document.all.month;
+            var day = document.all.day;
+            var jumin2 = document.all.jumin2;
+
+            if (jumin1.value.length == 6) {
+                year.value = "19" + jumin1.value.substring(0, 2);
+                month.value = jumin1.value.substring(2, 4);
+                day.value = jumin1.value.substring(4, 6);
+                jumin2.focus();
+            }
+        }
+        function check2(jumin2) {
+            var gender = document.all.gender;
+
+            if (jumin2.value.length == 1) {
+                if (parseInt(jumin2.value) % 2 == 1) {
+                    gender[0].checked = true;
+                } else {
+                    gender[1].checked = true;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+    <!--
+    주민번호 입력 시 나머지 컨트롤(생년월일, 성별) 제어를 하시오.
+    주민등록 번호 앞자리 입력 완료 -> 뒷자리 자동 포커스
+    주민등록 번호 앞자리 입력 완료 -> 생년월일 자동 완성
+    주민등록 번호 뒷자리 첫 숫자 입력 -> 성별 자동 체크
+    -->
+
+    <h1>회원 가입</h1>
+
+    <table id="tbl1">
+        <tr>
+            <th>주민번호</th>
+            <td>
+                <input type="text" name="jumin1" onkeyup="check(this);" maxlength="6" size="6" /> - <input type="text"
+                    name="jumin2" onkeyup="check2(this);" maxlength="7" size="7" />
+            </td>
+        </tr>
+        <tr>
+            <th>생년월일</th>
+            <td><input type="text" name="year" size="4" /> 년 <input type="text" name="month" size="2" /> 월 <input
+                    type="text" name="day" size="2" /> 일</td>
+        </tr>
+        <tr>
+            <th>성별</th>
+            <td><input type="radio" name="gender" /> 남자 <input type="radio" name="gender" /> 여자</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
     <script>
-        window.onload = function() {
-            document.images["cat1"].onmouseover = function() {
+        window.onload = function () {
+            document.images["cat1"].onmouseover = function () {
                 document.images["cat1"].width += 5;
             };
-            document.images["cat2"].onmouseover = function() {
+            document.images["cat2"].onmouseover = function () {
                 document.images["cat2"].width += 5;
             };
-            document.images["cat3"].onmouseover = function() {
+            document.images["cat3"].onmouseover = function () {
                 document.images["cat3"].width += 5;
             };
-            document.images["cat4"].onmouseover = function() {
+            document.images["cat4"].onmouseover = function () {
                 document.images["cat4"].width += 5;
             };
-            document.images["cat5"].onmouseover = function() {
+            document.images["cat5"].onmouseover = function () {
                 document.images["cat5"].width += 5;
             };
 
-            document.images["cat1"].onclick = function() {
-                    document.images["cat1"].width = 128;
+            document.images["cat1"].onclick = function () {
+                document.images["cat1"].width = 128;
             };
-            document.images["cat2"].onclick = function() {
-                    document.images["cat2"].width = 128;
+            document.images["cat2"].onclick = function () {
+                document.images["cat2"].width = 128;
             };
-            document.images["cat3"].onclick = function() {
-                    document.images["cat3"].width = 128;
+            document.images["cat3"].onclick = function () {
+                document.images["cat3"].width = 128;
             };
-            document.images["cat4"].onclick = function() {
-                    document.images["cat4"].width = 128;
+            document.images["cat4"].onclick = function () {
+                document.images["cat4"].width = 128;
             };
-            document.images["cat5"].onclick = function() {
-                    document.images["cat5"].width = 128;
+            document.images["cat5"].onclick = function () {
+                document.images["cat5"].width = 128;
             };
         }
 
-        window.onkeydown = function(event) {
+        window.onkeydown = function (event) {
             if (event.keyCode >= 48 && event.keyCode <= 57) { //숫자키
                 document.images["cat" + (event.keyCode - 48)].width += 5;
             } else if (event.keyCode == 27) { //ESC
-                for (var i=1; i<=5; i++){
+                for (var i = 1; i <= 5; i++) {
                     document.images["cat" + i].width = 128;
                 }
             }
         }
     </script>
 </head>
+
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
     <h1>고양이</h1>
     <img src="/asset/images/catty01.png" name="cat1">
@@ -59,4 +61,5 @@
     <img src="/asset/images/catty04.png" name="cat4">
     <img src="/asset/images/catty05.png" name="cat5">
 </body>
+
 </html>

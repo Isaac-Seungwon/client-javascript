@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+        }
+        #me {
+            border: 5px solid cornflowerblue;
+        }
+        .check {
+            outline: 5px solid coral;
+        }
+    </style>
+</head>
+<body>
+    <h1>Axis</h1>
+
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div>
+        할아버지
+        <div>
+            큰아버지
+            <div>사촌</div>
+        </div>
+        <div>
+            아버지
+            <div>큰형</div>
+            <div>작은형</div>
+            <div id="me">나
+                <div>자식
+                    <div>손자</div>
+                </div>
+                <div>자식</div>
+                <div>자식</div>
+            </div>
+            <div>동생</div>
+            <div>막내동생</div>
+        </div>
+        <div>
+            작은아버지
+            <div>사촌</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('btn1').onclick = m1;
+
+        function m1() {
+            var me = document.getElementById('me');
+
+            // document.body.className = 'check';
+
+            //자식 태그
+            // alert(me.childNodes.length);
+
+            // console.log(me.childNodes[i]);
+            // console.log(me.childNodes[i].nodeValue);
+
+            // for (var i=0; i<me.childNodes.length; i++) {
+            //     if (me.childNodes[i].nodeType == 1 && me.childNodes[i].nodeName == 'DIV') {
+            //         me.childNodes[i].className = 'check';
+            //     }
+            // }
+
+            for (var i=0; i<me.children.length; i++) {
+                me.nextElementSibling.nextElementSibling.className = 'check';
+            }
+        }
+    </script>
+</body>
+</html>

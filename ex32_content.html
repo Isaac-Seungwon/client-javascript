@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            border: 1px solid #777;
+            width: 200px;
+        }
+        fieldset > label {
+            display: block;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+        #tbl1 {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        #tbl1 td {
+            border: 1px solid gray;
+            width: 50px;
+            height: 50px;
+        }
+        #btn1 {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>테이블 생성하기</h1>
+
+    <fieldset>
+        <legend>행x열</legend>
+        <label>행: <select id="selrow"></select></label>
+        <label>열: <select id="selcolumn"></select></label>
+        <input type="button" value="생성하기" id="btn1">
+    </fieldset>
+
+    <table id="tbl1"></table>
+
+    <script>
+        var selrow = document.getElementById('selrow');
+        var selcolumn = document.getElementById('selcolumn');
+        var btn1 = document.getElementById('btn1');
+        var tbl1 = document.getElementById('tbl1');
+
+        //select box 초기화
+        for (var i=1; i<=10; i++) {
+            //var op = new Option();
+            //op.value = i;
+            //op.text = i;
+            //var op = new Option(i, i);
+
+            selrow.options.add(new Option(i, i));
+            selcolumn.options.add(new Option(i, i));
+        }
+
+        selrow.selectedIndex = 4; //행을 5로 시작
+        selcolumn.selectedIndex = 4; //열을 5로 시작
+
+        btn1.onclick = m1;
+
+        function m1() {
+            //<tr>, <td> 동적 생성하기
+            var temp = ''; //누적 변수
+
+            for (var i=0; i<selrow.value; i++) { //행
+                temp += '<tr>';
+
+                for (var j=0; j<selcolumn.value; j++) { //열
+                    temp += '<td>';
+                    temp += i + ',' + j;
+                    temp += '</td>';
+                }//for j
+
+                temp += '</tr>';
+            }//for i
+
+            tbl1.innerHTML = temp;
+        }
+    </script>
+</body>
+</html>

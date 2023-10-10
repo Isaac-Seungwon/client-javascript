@@ -1,0 +1,15 @@
+/* basic.css */
+@import url("https://use.fontawesome.com/releases/v5.4.1/css/all.css");
+
+@font-face { font-family: 'BRRA_R'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/BRRA_R.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+body {
+	margin-bottom: 100px;
+}
+
+body, p, div, span, ul, ol, li, table, th, td, input, textarea, button, a, select, option {
+	font-family: 'BRRA_R';
+	color: #444;
+	font-size: 1.0321em;
+	outline: none !important;
+}

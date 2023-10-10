@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="../../asset/question.css">
+   <title>Document</title>
+	<style>
+		input {
+			margin: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+		function sel(zip, address1) {
+			//window.document//본인창
+			//opener.document//부모창.. 자식창에서..
+			//child.document//자식창.. 부모창에서..
+			
+			//var child = window.open();
+			//window.document
+			
+			opener.document.form1.zip.value = zip;
+			opener.document.form1.address1.value = address1;
+			opener.document.form1.address2.focus();
+			window.close();
+		}
+	</script>
+	</head>
+<body>
+	<form>
+		<input type="button" value="서울시 강남구 역삼동" onclick="sel('06232','서울시 강남구 역삼동');" /><br />
+		<input type="button" value="서울시 강남구 대치동" onclick="sel('06291','서울시 강남구 대치동');" /><br />
+		<input type="button" value="서울시 강남구 도곡동" onclick="sel('06267','서울시 강남구 도곡동');" /><br />
+	</form>
+</body>
+</html>

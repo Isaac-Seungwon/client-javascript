@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex29_timer.html -->
+
+    <!-- 
+        타이머 시작
+        1. id setTimeout(할일, 시간)
+            - 1회성 타이머
+
+        2. id setInterval(할일, 시간)
+            - 반복 타이머
+
+        타이머 종료
+        1. void clearTimeout(id)
+
+        2. void clearInterval(id)
+     -->
+
+    <img src = "../asset/images/dog01.jpg" name = "dog1">
+
+    <script>
+        var dog1 = document.images['dog1'];
+        var m = 1;
+        var dtimer = 0;
+
+        dog1.onclick = m1;
+        function m1() {
+            if (dtimer == 0) {
+                dtimer = setInterval(f1, 1000);
+            } else {
+                clearInterval(dtimer);
+                dtimer = 0; // 중지
+            }
+        }
+
+        function f1() {
+            m++;
+            if (m > 5) m = 1;
+            dog1.src = '../asset/images/dog0' + m + '.jpg';
+        }
+    </script>
+
+    <!-- <form name="form1">
+        <fieldset>
+            <legend>setTimeout</legend>
+            <input type="button" name="btn1" value="버튼">
+            <input type="text" name="txt1">
+        </fieldset>
+
+        <fieldset>
+            <legend>setInterval</legend>
+                <input type="button" name="btn2" value="버튼">
+                <input type="text" name="txt2">
+        </fieldset>
+
+        <fieldset>
+            <legend>조작</legend>
+                <input type="button" name="btn3" value="시작">
+                <input type="button" name="btn4" value="멈춤">
+                <input type="text" name="txt3">
+        </fieldset>
+    </form> -->
+
+    <!-- <script>
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        var btn3 = document.form1.btn3;
+        var btn4 = document.form1.btn4;
+        var txt1 = document.form1.txt1;
+        var txt2 = document.form1.txt2;
+        var txt3 = document.form1.txt3;
+        var txt4 = document.form1.txt4;
+
+        btn1.onclick = m1;
+        function m1() { // 버튼 클릭 < 즉시 호출
+            setTimeout(f1, 3000);
+        }
+        function f1() { // m1 호출 > 3초 후 > f1 호출
+            // alert('따르릉');
+            txt1.value = (new Date()).toLocaleTimeString();
+        }
+
+        btn2.onclick = m2;
+        function m2() {
+            setInterval(f2, 3000);
+        }
+        function f2() {
+            // alert('따르릉');
+            txt2.value = (new Date()).toLocaleTimeString();
+        }
+
+        var n = 1;
+        var timer = 0;
+        var timerlist = [];
+
+        btn3.onclick = m3;
+        function m3() {
+            // if (timer == 0) { // 타이머 조건부 실행
+            //     timer = setInterval(f3, 10);
+            //     console.log(timer);
+            // }
+
+            timer = setInterval(f3, 10);
+
+            timerlist.push(timer);
+
+        }
+        function f3() {
+            txt3.value = n;
+            n++;
+        }
+
+        btn4.onclick = m4;
+        function m4() {
+            // clearInterval(timer); //타이머 종료
+            // timer = 0; // 타이머 초기화
+
+            //순차 중지
+            timer = timerlist.pop();
+            clearInterval(timer);
+
+            //일괄 중지
+            for (var i=0; i<timerlist.length; i++){
+                clearInterval(timerlist)
+            }
+        }
+    </script> -->
+</body>
+</html>

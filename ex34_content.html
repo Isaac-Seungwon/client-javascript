@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sample {
+            border: 1px solid black;
+            background-color: #EEE;
+            padding: 20px;
+            width: 800px;
+            text-align: center;
+        }
+        #sample .pic {
+            width: 150px;
+            border-radius: 10px;
+            opacity: .3;
+            cursor: pointer;
+        }
+        #sample .pic:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="sample">
+        <img src="../asset/images/cat01.jpg" class="pic">
+        <img src="../asset/images/cat02.jpg" class="pic">
+        <img src="../asset/images/cat03.jpg" class="pic">
+        <img src="../asset/images/cat04.jpg" class="pic">
+        <img src="../asset/images/cat05.jpg" class="pic">
+        <img src="../asset/images/dog01.jpg" class="pic">
+        <img src="../asset/images/dog02.jpg" class="pic">
+        <img src="../asset/images/dog03.jpg" class="pic">
+        <img src="../asset/images/dog04.jpg" class="pic">
+        <img src="../asset/images/dog05.jpg" class="pic">
+    </div>
+    <hr>
+    <input type="button" value="삭제하기" id="btn1">
+    <hr>
+    <div id="output"></div>
+
+    <script>
+        var pic = document.getElementsByClassName('pic');
+
+        for (var i=0; i<pic.length; i++) {
+            pic[i].onclick = m1;
+        }
+
+        function m1() {
+            //클릭한 <img> 태그 확인
+            //alert(event.target.src);
+            
+            //클릭한 썸네일을 하단 output에 동적으로 출력
+            var url = event.target.src;
+
+            var filename = url.substring(url.lastIndexOf('/') + 1);
+            // alert(filename);
+
+            document.getElementById('output').innerHTML = '<img src="../asset/images/' + filename + '">';
+        }
+
+        document.getElementById('btn1').onclick = m2;
+
+        function m2() {
+            if ( document.getElementById('output').innerHTML != '') {
+                if (confirm('정말 삭제하시겠습니까?')) {
+                    document.getElementById('output').innerHTML = '';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

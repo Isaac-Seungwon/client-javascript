@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="../../asset/question.css">
+   <title>Document</title>
+   <style type="text/css">
+		#tbl1 {
+			border: 1px solid gray;
+			border-collapse: collapse;
+			width: 600px;
+		}
+		
+		#tbl1 td {
+			border: 1px solid gray;
+			padding: 10px;
+		}
+		
+		#tbl1 td:first-child {
+			background-color: #DEDEDE;
+			width: 100px;
+			text-align: center;
+		}
+		
+		input {
+			border: 1px solid gray;
+			padding-left: 3px;
+		}
+		
+		#zip {
+			width: 60px;
+		}
+		
+		#address1, #address2 {
+			width: 98%;
+		}
+	</style>
+	<script type="text/javascript">
+		function search() {
+
+			window.open("search_impl.html", "search", "width=300, height=200");		
+			
+		}
+	</script>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+    <!-- 
+    새창을 띄운 뒤 우편 번호 검색을 하시오.
+    우편번호, 주소 : 새창에서 선택하면 자동 채우기
+    상세주소 : 포커스 맞추기
+    -->
+    
+	<form name="form1">
+		<h1>우편 번호 검색</h1>
+		<table id="tbl1">
+			<tr>
+				<td>우편번호</td>
+				<td>
+					<input type="text" id="zip" name="zip" readonly />
+					<input type="button" value=" 우편번호검사하기" onclick="search();" />
+				</td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" id="address1" name="address1" readonly /></td>
+			</tr>
+			<tr>
+				<td>상세주소</td>
+				<td><input type="text" id="address2" name="address2" /></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

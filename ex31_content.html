@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Content</h1>
+
+    <input type="button" value="버튼" id="btn1">
+    <input type="button" value="버튼" id="btn2">
+    <hr>
+    <div id="div1">콘텐츠 영역</div>
+
+    <script>
+        document.getElementById('btn1').onclick = m1;
+
+        var n = 1;
+        function m1() {
+            var div1 = document.getElementById('div1');
+
+            //읽기
+            // alert(div1.innerText);
+            // alert(div1.innerHTML);
+            // alert(div1.textContent);
+            
+            //쓰기
+            // div1.innerText = 'Isaac';
+            // div1.innerHTML = 'Sopia';
+            // div1.textContent = 'Happy Day';
+
+            // div1.textContent = 'I<b>s</b>aac';  
+            
+            // 동적으로 태그 생성
+            // for (var i=0; i<10; i++) {
+            //     div1.innerHTML += '<input type="text"><br>';
+            // }
+
+            div1.innerHTML += '<img src="../asset/images/dog01.jpg">';
+            n++;
+            if (n > 5) n = 0;
+        }
+        
+        document.getElementById('btn2').onclick = m2;
+        function m2() {
+            document.getElementById('div1').innerHTML = '';
+        }
+    </script>
+</body>
+</html>

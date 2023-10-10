@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+        #tbl1 td {
+            border: 1px solid gray;
+            width: 126px;
+            height: 126px;
+        }
+        #tbl1 td img {
+            display: block;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <table id="tbl1">
+        <!-- tr*5>td*5 -->
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        //<td> x 25 이벤트 추가
+        var list = document.getElementsByTagName('td');
+
+        for (var i=0; i<list.length; i++){
+            // list[i].onclick = m1;
+            list[i].onmousedown = m1;
+        }
+
+        function m1() {
+            //어떤 td를 클릭했는지 확인
+            //event.target.innerText = 'click';
+            //event.target.bgColor = 'tomato';
+            //event.target.innerHTML = '<img src="../asset/images/rect_icon01.png">';
+
+            var n = 0;
+
+            if (event.buttons == 1) {
+                n = 1;
+            } else if (event.buttons == 2) {
+                n = 2;
+            } else if (event.buttons == 4) {
+                n = 4;
+            }
+            event.target.innerHTML = '<img src="../asset/images/rect_icon0' + n + '.png">';
+        }
+    </script>
+</body>
+</html>

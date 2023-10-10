@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM Event</h1>
+
+    <input type="button" value="버튼(BOM)" id="btn1">
+    <input type="button" value="버튼(DOM)" id="btn2">
+
+    <script>
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        
+        //BOM
+        //btn1.onclick = 함수;
+        btn1.onclick = m1;
+        btn1.onclick = m2; //덮어쓰기
+        function m1() {
+            alert('m1');
+        }
+
+        btn2.onclick = m2;
+        function m2() {
+            btn1.onclick = null; //이벤트 제거
+        }
+
+        //DOM
+        //btn2.addEventListener(이벤트종류, 함수);
+        btn2.addEventListener('click', m3);
+        function m3() {
+            alert();
+        }
+
+        btn2.addEventListener('click', m4);
+        function m4() {
+            btn2.removeEventListener('click', m3);
+        }
+
+        btn2.addEventListener('click', m4);
+    </script>
+</body>
+</html>
