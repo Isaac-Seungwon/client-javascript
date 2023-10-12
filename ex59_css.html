@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #box {
+        width: 200px;
+        height: 200px;
+        font-size: 20px;
+        background-color: darksalmon;
+        margin: 100px;
+        transition: all 1s linear;
+    }
+    /* #box:hover {
+        transform: rotate(360deg);
+    } */
+</style>
+</head>
+<body>
+    <div id="box">상자</div>
+    
+    <script>
+        const box = document.getElementById('box');
+        let degree = 0;
+        let timer = 0;
+
+        box.addEventListener('click', function() {
+            
+            // if (timer == 0) {
+            //     timer = setInterval(function() {
+            //         box.style.transform = `rotate(${degree}deg)`;
+            //         degree++;
+            //     }, 10)
+            // } else {
+            //     clearInterval(timer);
+            //     timer = 0;
+            // }
+
+            box.style.transform = `rotate(${Math.random() * 3600}deg)`;
+        });
+    </script>
+</body>
+</html>

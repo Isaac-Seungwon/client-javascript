@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="../asset/question.css">
+   <title>Document</title>
+   <style>
+		#tbl1 {
+			border: 1px solid black;
+			border-collapse: collapse;
+			margin: 50px auto;
+		}
+		#tbl1 td {
+			border: 1px solid black;
+			width: 126px;
+			height: 126px;
+		}
+		#tbl1 td img {
+			display: block;
+		}
+	</style>
+	<script>
+		
+		window.onload = function() {
+			
+			var cell = document.getElementsByClassName("cell");
+			
+			for (var i=0; i<cell.length; i++) {
+				
+				cell[i].onmousedown = function() {
+					
+					if (event.buttons == 1) {
+						var c = event.srcElement;
+						if (c.innerHTML == "") {
+							c.innerHTML = "<img src='https://drive.google.com/uc?export=download&id=1s96T2izIFLk42O83PU5X3OiX1d0kgPFG'>";
+						}
+					} else if (event.buttons == 2) {
+						var c = event.srcElement;
+						if (c.innerHTML == "") {
+							c.innerHTML = "<img src='https://drive.google.com/uc?export=download&id=1pr699y450IgMNTMiqYC1KQulKNZs96Ke'>";
+						}
+					}
+					
+				};
+				
+			}
+			
+		};
+		
+	</script>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+    <!--     
+    모든 셀에 클릭 이벤트를 추가해 이미지 태그를 동적 추가하시오.
+    왼쪽 버튼 : rect_icon01.png 추가
+    오른쪽 버튼 : rect_icon02.png 추가
+     -->
+	<table id="tbl1">
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+		<tr>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>
+			<td class="cell"></td>			
+		</tr>
+	</table>
+	
+
+	<div style="display: none;">
+		<img src='https://drive.google.com/uc?export=download&id=1s96T2izIFLk42O83PU5X3OiX1d0kgPFG'>
+		<img src='https://drive.google.com/uc?export=download&id=1pr699y450IgMNTMiqYC1KQulKNZs96Ke'>
+	</div>
+
+</body>
+</html>

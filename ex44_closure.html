@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+
+    <script>
+        function outer() {
+
+            //지역 변수(outer)
+            let a = 10;
+            console.log('a', a);
+
+            //지역 함수(outer)
+            function inner() {
+
+                //지역 변수(inner)
+                let b = 20;
+                console.log('b', b);
+            }
+
+            inner();
+            //console.log('b', b);
+        }
+
+        outer();
+        //inner();
+        //console.log('a', a);
+
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+
+        let num1 = 100; //전역 변수
+
+        btn1.onclick = function() {
+            let num2 = 200; //지역 변수(btn1.onclick)
+
+            //조건부 이벤트
+            btn2.onclick = function() {
+                alert(num1); //전역 변수 접근
+                alert(num2); //지역 변수 접근
+            };
+        };
+    </script>
+</body>
+</html>

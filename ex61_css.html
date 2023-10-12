@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 10px solid cornflowerblue;
+            width: 250px; 
+            height: 188px;
+            overflow: hidden;
+        }
+        #list {
+            /* border: 5px solid green; */
+            width: 1250px;
+            display: flex;
+            transition: all 1s;
+        }
+        /* 자바스크립트로 구현 */
+        /* #box:hover #list {
+            transform: translate(-250px, 0px);
+        } */
+        #sel1 {
+            font-size: 20px;
+            width: 250px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>고양이</h1>
+
+    <div id="box">
+        <div id="list">
+            <img src="../asset/images/cat01.jpg">
+            <img src="../asset/images/cat02.jpg">
+            <img src="../asset/images/cat03.jpg">
+            <img src="../asset/images/cat04.jpg">
+            <img src="../asset/images/cat05.jpg">
+        </div>
+    </div>
+    <hr>
+    <select id="sel1">
+        <option value="0">고양이1</option>
+        <option value="1">고양이2</option>
+        <option value="2">고양이3</option>
+        <option value="3">고양이4</option>
+        <option value="4">고양이5</option>
+    </select>
+
+    <script>
+        const list = document.getElementById('list');
+        const sel1 = document.getElementById('sel1');
+
+        let dist = 0;
+
+        sel1.addEventListener('change', function() {
+            list.style.transform = `translate(-${sel1.value * 250}px, 0px)`;
+        })
+
+        window.onkeydown = function() {
+            list.style.transform = `translate(-${(event.keyCode - 49) * 250}px, 0px)`;
+        }
+    </script>
+</body>
+</html>

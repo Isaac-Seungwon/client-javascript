@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="list">
+        <img src="../asset/images/dog01.jpg">
+        <img src="../asset/images/dog02.jpg">
+        <img src="../asset/images/dog03.jpg">
+        <img src="../asset/images/dog04.jpg">
+        <img src="../asset/images/dog01.jpg">
+    </div>
+        
+    <script>
+        for (let i=0; i<list.children.length; i++) {
+            list.children[i].onclick = m1;
+        }
+
+        function m1() {
+            event.target.width += 10;
+        }
+
+        // const list = document.getElementById('list');
+
+        // list.setAttribute('title', '풍선 도움말');
+        // list.innetText = 'Issac';
+        /*
+            JavaScript Core
+
+            변수 선언하기
+            1. var
+                - BOM / DOM / ES6
+                - function-scoped
+        
+            지금까지 사용해온 변수는 var이었다.
+            var은 BOM때부터 있었고, DOM에 와서도 여전히 지원하고 사용하고 있다.
+            function-scoped이기 때문에 제어문을 영역으로 인식 불가능하다.
+
+            #var은 중복 선언이 가능하다.
+            var a = 10;
+            var a = 20;
+            console.log(a);
+            var은 중복 선언이 된다. 하지만 의도적으로 안 할 뿐이다. (이게 되는 내부적인 이유가 있다.)
+
+            상수 선언이 불가능하다.
+
+            2. let
+                - ES6 (ECMAScript 2015)
+                - block-scoped (함수, 제어문)
+            block-scoped를 가지므로 함수와 제어문에서 사용할 수 있다.
+
+            3. const
+                - ES6 (ECMAScript 2015)
+
+            let과 const는 ES6때 만들어진 변수를 만드는 키워드이다.
+        */
+        
+
+
+    </script>
+</body>
+</html>

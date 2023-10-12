@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { padding: 50px; }
+        #p1 { background-color: tomato; }
+        #p2 { background-color: gold; }
+        #p3 { background-color: cornflowerblue; }
+    </style>
+</head>
+<body>
+    <div id="p1" class="box">
+        <div id="p2" class="box">
+           <div id="p3" class="box">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <input type="text" id="txt1">
+    <hr>
+    <img src="../asset/images/dog01.jpg" id="dog1">
+
+    <script>
+        // const p1 = document.getElementById('p1');
+        // const p2 = document.getElementById('p2');
+        // const p3 = document.getElementById('p3');
+
+        // document.getElementsByTagName('html')[0].onclick = function() {
+        //     alert('html');
+        // }
+
+        // document.getElementsByTagName('body')[0].onclick = function() {
+        //     alert('body');
+        // }
+
+        // p1.onclick = function() {
+        //     alert('red');
+        // }
+
+        // p2.onclick = function() {
+        //     alert('yellow');
+        // }
+
+        // p3.onclick = function() {
+        //     alert('blue');
+        //     event.cancelBubble = true;
+        // }
+
+        // window.onkeydown = function() {
+        //     if (event.keyCode == 37) {
+        //         document.getElementById('dog1').width -= 10;
+        //     } else if (event.keyCode == 39) {
+        //         document.getElementById('dog1').width += 10;
+        //         location.href = 'https://google.com';
+        //     }
+        // };
+
+        // document.getElementById('txt1').onkeydown = function() {
+        //     event.cancelBubble = true;
+        // };
+
+        // p1.addEventListener('click', function() {
+        //     alert('red');
+        // }, true);
+
+        // p2.addEventListener('click', function() {
+        //     alert('yellow');
+        // }, true);
+
+        // p3.addEventListener('click', function() {
+        //     alert('blue');
+        // }, true);
+
+        p1.addEventListener('click', function() {
+            alert('red');
+        });
+
+        p2.addEventListener('click', function() {
+            alert('yellow');
+        });
+
+        p3.addEventListener('click', function() {
+            alert('blue');
+            event.cancelBubble = true;
+            event.stopPropagation(); //이벤트 전파 중지
+        });
+    </script>
+</body>
+</html>

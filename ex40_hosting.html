@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function m1() {
+        //     alert('m1');
+        // }
+
+        // m1();
+
+        // m2();
+
+        // function m2() {
+        //     alert('m2');
+        // }
+
+        function m3() {
+            alert(a);
+            var a = 10; //not defined variable a (X)
+        }
+
+        m3();
+
+        function m3() {
+            alert(a);
+            let a = 10; //not defined variable a (X)
+        }
+
+        m3();
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const isaac = {
+        //     name: 'isaac'
+        // }
+
+        // isaac.age = 25;
+
+        // const now = new Date();
+        // console.log(now);
+
+        // now.color = 'tomato'; //사용자 정의 프로퍼티
+        // console.log(now.color);
+
+        // now.check = function() { //사용자 정의 프로퍼티
+        //     console.log('check');
+        // };
+
+        function m1() {
+            alert('m1');
+        }
+
+        window.m1 = m1;
+
+        var a1 = 'isaac'; //전역 변수 > 변수(X), 프로퍼티(O)
+        console.log(window.a1);
+
+        let a2 = 'Sopia'; //window 프로퍼티(X)
+        const a3 = 'Lee'; //window 프로퍼티(O)
+
+        //제어문
+        // for (변수 in 객체) {
+
+        // }
+        
+        console.clear();
+
+        const obj = {
+            name: '객체',
+            age: 20
+        }
+
+        for (let p in window) {
+            console.log(p, obj[p]);
+        }
+
+    </script>
+</body>
+</html>

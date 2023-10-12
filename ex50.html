@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 500px;
+            height: 500px;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        const list = document.querySelectorAll('#tbl1 td');
+        let index = 0;
+
+        list[index].bgColor = 'gold';
+        
+        window.onkeydown = function() {
+            if (event.keyCode == 37) {
+                cleadBackgroundColor();
+                
+                if (index > 0) {
+                    index--;
+                }
+            } else if (event.keyCode == 39) {
+                cleadBackgroundColor();
+
+                if (index < list.length - 1) {
+                    index++;
+                }
+            } else if (event.keyCode == 40) {
+                cleadBackgroundColor();
+
+                if (index < 20) {
+                    index+=5;
+                }
+            } else if (event.keyCode == 38) {
+                cleadBackgroundColor();
+
+                if (index > 4) {
+                    index-=5;
+                }
+            }
+            list[index].bgColor = 'gold';
+        }
+
+        function cleadBackgroundColor() {
+            for(let i=0; i<list.length; i++) {
+                list[i].bgColor = 'transparent';
+            }
+        }
+    </script>
+</body>
+</html>

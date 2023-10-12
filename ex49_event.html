@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 80px;
+            height: 80px;
+        }
+
+        #tbl1 td img {
+            display: block;
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- table#tbl1>tr*10>td*10 -->
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        const list = document.querySelectorAll('#tbl1 td');
+
+        for (let i=0; i<list.length; i++) {
+            //마우스가 td 위에 있을 때
+            list[i].onmouseenter = function() {
+                //보조키의 눌림 상태
+                console.log(event.ctrlKey);
+                console.log(event.shiftKey);
+                console.log(event.altKey);
+
+                //이미지가 없을 경우에만 이미지 삽입
+                if(event.currentTarget.children.length == 0) {
+                    //event.target.bgColor = 'gold';
+                    const img = document.createElement('img');
+
+                    if (event.ctrlKey) {
+                        img.setAttribute('src', '../asset/images/rect_icon04.png');
+                    } else {
+                        img.setAttribute('src', '../asset/images/rect_icon05.png');
+                    }
+                    event.currentTarget.appendChild(img);
+                }
+            };
+            
+            // 마우스가 td 위에 없을 때
+            // list[i].onmouseleave = function() {
+            //     //event.target.bgColor = 'transparent';
+            //     event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+            // };
+        }
+    </script>
+</body>
+</body>
+</html>

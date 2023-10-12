@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        #tbl1 td {
+            border: 1px solid black;
+            width: 150px;
+            height: 70px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>테이블</h1>
+    <!-- table#tbl.table>tr*10>td{item}*5 -->
+    <table id="tbl1" class="table">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+
+    <script>
+        const table = document.getElementById('tbl1');
+
+        tr = table.firstElementChild.children; //table.tbody.tr들
+
+        for (let i=0; i<tr.length; i++) {
+            //이벤트가 발생된 객체(태그)
+            //-event.target
+            //-event.srcElement
+
+            tr[i].onmouseover = function() {
+                //event.target.bgColor = 'gold';
+                //event.srcElement.bgColor = 'gold';
+                //event.target.parentElement.bgColor = 'gold';
+                //event.currentTarget.bgColor = 'gold';
+                tr[i].bgColor = 'gold';
+            };
+
+            tr[i].onmouseout = function() {
+                event.currentTarget.bgColor = 'transparent';
+            }
+        }
+    </script>
+</body>
+</html>

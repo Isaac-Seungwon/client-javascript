@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="버튼" id="btn1">
+    <input type="button" value="버튼" id="btn2">
+    <input type="button" value="버튼" id="btn3">
+    
+    <script>
+        document.getElementById('btn1').onclick = p1;
+        
+        function p1() {
+            alert('btn1 > ' + event.buttons);
+        }
+
+        //p1();
+
+        document.getElementById('btn2').onclick = function () {
+            alert('btn2');
+        };
+
+        // document.getElementById('btn3').addEventListener('click', p3);
+        
+        // function p3() {
+        //     alert();
+        // }
+
+        document.getElementById('btn3').addEventListener('click', function(){
+            alert();
+        });
+
+        
+        function m5() {
+            alert();
+        }
+        function m6() {
+            m6(m5);
+        }
+
+        function m6(aaa) {
+            aaa();
+        }
+        m6(m5);
+
+        m6(function() {
+            alert('익명 함수');
+        })
+
+        function m7() {
+            alert('m7');
+        }
+
+        function m8() {
+            return m7;
+        }
+
+        let temp = m8();
+
+
+        setTimeout(function() {
+            alert();
+        }, 1000);
+
+
+        // //함수 선언문
+        // function m1() {
+        //     alert('m1');
+        // }
+        // m1();
+
+        // //함수 표현식
+        // let f2 = function () {
+        //     alert('익명 함수');
+        // }
+
+        // f2();
+
+        // function m3() {
+        //     alert('m3');
+        // }
+
+        // let f3;
+
+        // f3 = m3;
+
+        // //m3();
+        // f3();
+
+        // function m4() {
+        //     alert('m4');
+        // }
+
+        // let f4;
+
+        // f4 = function m4() { //f4 = function ()
+        //     alert('m4');
+        // };
+
+        // f4();
+        //m4();
+    </script>
+</body>
+</html>

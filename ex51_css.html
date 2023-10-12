@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            border: 1px solid black;
+            width: 200px; height: 200px;
+        }
+        .one { font-size: 3rem; }
+        .two { color: cornflowerblue; }
+        .three { text-decoration: underline; }
+        body {
+            margin-bottom: 300px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a92e13dcf8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- <h1>CSS</h1>
+        
+    <input type="button" value="버튼" id="btn1">
+    <hr>
+    <div id="box1">상자</div>
+
+    <hr> -->
+    <h1>텍스트</h1>
+    <div class="tool">
+        <button type="button" id="btn2"><i class="fa-solid fa-plus"></i></button>
+        <button type="button" id="btn3"><i class="fa-solid fa-minus"></i></button>
+    </div>
+
+    <p id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia suscipit odio sint sapiente quod reprehenderit exercitationem? Quisquam veritatis beatae minima voluptatum ea quasi cum explicabo eveniet animi voluptatem tenetur modi, ratione eligendi obcaecati quae inventore exercitationem enim expedita tempore quam fugiat ipsum. Voluptate obcaecati atque omnis ratione non ab possimus quaerat tenetur placeat. Aliquam illo quas aspernatur rerum placeat officiis adipisci facilis atque dolorem, maxime dolor. Excepturi quo unde provident fugit aspernatur eos inventore quia ea autem, corporis impedit iste totam mollitia, ab facilis labore repellendus tempora reprehenderit, vero numquam molestias omnis. Architecto repellendus placeat, repellat cumque quam sapiente veritatis natus inventore eligendi non doloremque dolorem iure quidem, autem amet provident sequi impedit illo, aperiam sunt. Quos ad soluta amet a nemo iste exercitationem similique laborum cupiditate in dolorem voluptatibus obcaecati accusantium fugiat possimus consectetur, odit provident placeat voluptate? Maxime vel itaque id ad corrupti eum esse veritatis dolore molestiae iusto vero iure nesciunt at animi, nobis vitae facere asperiores expedita blanditiis quae rerum ducimus odio aliquam. Quisquam ea fugiat dignissimos eveniet, qui incidunt accusamus odio, autem, delectus aperiam cumque. Adipisci delectus, incidunt nisi corporis iusto maxime quasi quo eaque mollitia quidem praesentium odit fugiat sint doloribus veritatis qui eos, repellendus porro vero, facere tenetur? Provident vitae, tempora debitis laboriosam dicta sit dolores voluptate explicabo eligendi? Amet nulla fugiat vero voluptatum aspernatur illum! Cupiditate similique dicta, mollitia, ea vitae odio corrupti eius consectetur repellendus reiciendis asperiores. Atque, ipsam natus quas culpa laborum at, repellendus sit ipsum sapiente non ea quo nam autem saepe, odit aspernatur pariatur sequi magnam recusandae repudiandae doloremque alias provident? Nulla neque sit, sed quo repudiandae molestias, ipsum tempore numquam ex cum ratione exercitationem obcaecati dolorem architecto. Reprehenderit voluptatem aut, accusamus animi officia maiores, facilis aliquam similique illo ab veniam, et nisi quam maxime quo velit.</p>
+    
+    <script>
+        const btn2 = document.getElementById('btn2');
+        const btn3 = document.getElementById('btn3');
+        const content = document.getElementById('content');
+
+        let size = 16; //속성 통제를 위한 변수 생성
+
+        btn2.addEventListener('click', function() {
+            content.classList.add('one');
+            content.classList.add('two');
+            content.classList.add('three');
+        });
+
+        btn3.addEventListener('click', function() {
+            content.classList.remove('one');
+        });
+
+        // btn2.addEventListener('click', function() {
+        //     size++;
+        //     content.style.fontSize = size + 'px';
+        // });
+
+        // btn3.addEventListener('click', function() {
+        //     size--;
+        //     content.style.fontSize = size + 'px';
+        // });
+    </script>
+
+    <script>
+        const btn1 = document.getElementById('btn1');
+        const box1 = document.getElementById('box1');
+        btn1.value = 'Button';
+
+        btn1.addEventListener('click', function() {
+            // box1.style.color = 'cornflowerblue';
+            // box1.style.fontSize = '2rem';
+            // box1.style.backgroundColor = 'gold';
+            // box1.style['color'] = 'gold';
+            // box1.style['font-size'] = "2rem";
+            // box1.style['background-image'] = 'url(../asset/images/dog01.jpg)';
+            // console.log('너비: ' + box1.style.width);
+            // box1.style.width = parseInt(box1.style.width) + 50 + 'px';
+            // const list = window.getComputedStyle(box1);
+            // console.log('너비: ' + list.width);
+            // console.log('높이: ' + list.getPropertyValue('height')); //정석적인 방법
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            display: flex;
+            width: 630px;
+            position: fixed;
+
+            /* 수평정렬 set */
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+
+            transform: translate(0px, -100px);
+        }
+        #menu img {
+            transition: all .5s;
+        }
+        /* 자바스크립트로 구현 */
+        /* #menu img:hover {
+            transform: translate(0px, 100px);
+        } */
+    </style>
+</head>
+<body>
+    <nav id="menu">
+        <img src="../asset/images/rect_icon01.png">
+        <img src="../asset/images/rect_icon02.png">
+        <img src="../asset/images/rect_icon03.png">
+        <img src="../asset/images/rect_icon04.png">
+        <img src="../asset/images/rect_icon05.png">
+    </nav>
+    <script>
+        const item=document.querySelectorAll('#menu > img');
+        let olditem;
+
+        for(let i=0; i<item.length; i++){
+            item[i].onclick=function(){
+                if(olditem!=null){  //메뉴 1개가 열려있다.
+                    olditem.style.transform='translate(0px, 0px)';
+                }
+                if(olditem!=event.target){
+                    event.target.style.transform='translate(0px, 90px)';
+                    olditem=event.target;
+                }else{
+                    event.target.style.transform='translate(0px, 0px)';
+                    olditem=null;
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>

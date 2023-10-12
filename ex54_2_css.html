@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { 
+            width: 150px; 
+            height: 150px; 
+            position: absolute; 
+            left: 0;
+            top: 0;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex54_css.html -->
+
+    <h1>Drag & Drop</h1>
+    <div id="box1" class="box"></div>
+    <p>드래그 앤 드랍을 구현합니다.</p>
+
+    <script>
+
+        const box1 = document.getElementById('box1');
+        let isDown = false;
+        let x = 0;
+        let y = 0;
+
+        //Drag & Drop > 개체 이동 인터페이스
+        window.onmousedown = function() {
+
+            //누른 대상 > 빈영역 or 상자?
+            if (event.target.id == 'box1') {
+                isDown = true;
+
+                //상자의 어느 부분를 눌렀는지?
+                x = event.offsetX;
+                y = event.offsetY;
+            }
+            
+        };
+
+        window.onmousemove = function() {
+            if (isDown) {
+                box1.style.left = event.clientX - x + 'px';
+                box1.style.top = event.clientY - y + 'px';
+            }
+        };
+
+        window.onmouseup = function() {
+            isDown = false;
+        };
+
+        
+    </script>
+
+</body>
+</html>

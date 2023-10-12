@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const park = {}; //new Object();
+        // park.name = '박필견'
+        // park.age = 40;
+        // park.address = '평양';
+
+        const park = {
+            name: '박필견',
+            age: 40,
+            address: '평양'
+        };
+
+        console.log(park);
+        
+        const address = {
+            si: '인천시',
+            gu: '계양구',
+            dong: '박촌동'
+        }
+        const Eom = {
+            name: '엄석대',
+            age: 30,
+            //address: '인천시 계양구 박촌동'
+            address: {
+                si: '인천시',
+                gu: '계양구',
+                dong: '박촌동'
+            } //객체 안에 또 다른 객체
+        }
+
+        const ha = {
+            name: '하후돈',
+            age: 3,
+            hello: m1
+        }
+
+        function m1() {
+            alert('안녕하세요');
+        }
+        
+        // class User {
+        //     public String name;
+        //     public int age;
+        //     public String address;
+        // }
+
+        // User isaac = new User();
+
+        // isaac.name = 'isaac';
+        // isaac.age = 20;
+        // isaac.address = "서울시 강남구";
+
+
+        const isaac = new Object();
+        isaac.name = 'Isaac';
+        isaac.age = 20;
+        isaac.address = "서울시 강남구";
+
+        console.log(isaac.name);
+        console.log(isaac.age);
+        console.log(isaac.address);
+
+        isaac.tel = '010-1234-5678';
+        isaac['tel'] = '010-1234-5678';
+
+        let key = 'tel';
+        isaac[key] = '010-1234-5678';
+        
+        //isaac-primary-phone = '010-1234-5678';
+        isaac[primary-phone] = '010-1234-5678';
+
+        const lee = new Object();
+        
+        lee.name = '이순신';
+        lee.age = 25;
+        lee.address = '서울시 강동구 풍납동';
+
+        console.log(lee.name);
+        console.log(lee.age);
+        console.log(lee.address);
+
+        console.clear();
+
+
+        
+
+    </script>
+</body>
+</html>

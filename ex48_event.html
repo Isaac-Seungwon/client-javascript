@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 126px;
+            height: 126px;
+        }
+
+        #tbl1 td img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>테이블</h1>
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        const list = document.querySelectorAll('#tbl1 td');
+
+        for (let i=0; i<list.length; i++) {
+            list[i].onmousedown = function() {
+                if (event.buttons == 1) { //마우스 왼쪽 버튼
+                    if (event.target.nodeName == 'TD') {
+                        //비어있는 <td>
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon01.png');
+                        event.target.appendChild(img);
+                    } else {
+                        //<img>
+                        event.currentTarget.removeChild(event.currentTarget.firstElementChild); //기존 이미지 삭제
+                        
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon02.png');
+                        event.currentTarget.appendChild(img);
+                    }
+                    
+                    //console.log(event.target);
+                } else if (event.buttons == 2) { //마우스 오른쪽 버튼
+                    if(event.target.nodeName =='TD') {
+                        //비어있는 <td>
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon02.png');
+                        event.target.appendChild(img);
+                    } else {
+                        event.currentTarget.removeChild(event.currentTarget.firstElementChild); //기존 이미지 삭제
+                        
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon01.png');
+                        event.currentTarget.appendChild(img);
+                    }
+                } else if (event.buttons == 4) { //마우스 휠 버튼
+                    //클릭한 이미지 삭제
+                    //-부모태그.removeChild(자식태그)
+                    //event.target.removeChild(event.target.firstElementChild); //작동X
+                    //event.target.parentElement.removeChild(event.target); //번거로움
+                    event.currentTarget.removeChild(event.currentTarget.firstElementChild); //최종삭제코드
+                }
+            }
+        }
+
+        window.oncontextmenu = function() {
+            return false;
+        };
+    </script>
+</body>
+</html>

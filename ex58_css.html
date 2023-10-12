@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: gold;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Drag & Drop</h1>
+    <div id="box1" class="box"></div>
+
+    <script>
+        const box1 = document.getElementById('box1');
+        let isDown = false;
+        let x = 0;
+        let y = 0;
+
+        function isValid(event) {
+            //현재 상자의 크기
+            let w = parseInt(window.getComputedStyle(box1).width);
+            let h = parseInt(window.getComputedStyle(box1).height);
+
+            if (event.offsetX >= (w - 20) && event.offsetX <= w && event.offsetY >= (h - 20) && event.offsetY <= h) {
+                return true;
+            }
+            return false;
+        }
+
+        //Drag & Drop
+        window.onmousedown = function () {
+            if (event.target.id == 'box1' && isValid(event)) {
+                isDown = true;
+                box1.style.opacity = .3;
+            }
+        };
+
+        window.onmousemove = function () {
+            if (isDown) {
+                box1.style.width = event.clientX + 'px';
+                box1.style.height = event.clientY - 75 + 'px';
+            }
+        };
+
+        window.onmouseup = function () {
+            isDown = false;
+            box1.style.opacity = 1;
+        };
+    </script>
+</body>
+</html>
