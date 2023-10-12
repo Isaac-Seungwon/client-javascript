@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Author" content="in">
+    <meta name="Generator" content="Visual Studio Code">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="basic.css">
+    <style type="text/css">
+        #main,
+        .main {
+            position: static;
+        }
+
+        #img1 {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'> 
+    <!--     
+    마우스를 올려면 이미지를 이동시키시오.
+    마우스 접근 방향에 따라 이미지 이동 방향을 다르게 하시오.
+    -->
+
+    <img src="https://drive.google.com/uc?export=download&id=1dDsQDJ_Odyw26Ajw1f2HkxkocidBtJt4" id="img1" />
+
+    <script type="text/javascript">
+        var img1;
+
+        window.onload = function () {
+            img1 = document.getElementById("img1");
+
+            img1.style.left = "530px";
+            img1.style.top = "200px";
+
+            img1.onmouseover = function () {
+                var ox = parseInt(img1.style.left);
+                var oy = parseInt(img1.style.top);
+
+                if ((parseInt(event.clientX) >= ox + 60) && parseInt(event.clientX) <= ox + 120) {
+                    img1.style.left = ox - 60 + "px";
+                }
+
+                if ((parseInt(event.clientX) <= ox + 60) && parseInt(event.clientX) >= ox) {
+                    img1.style.left = ox + 60 + "px";
+                }
+
+                /*
+                if ((parseInt(event.clientY) >= oy + 50) && parseInt(event.clientY) <= oy + 100) {
+                    img1.style.top = oy - 50 + "px";
+                }
+            	
+                if ((parseInt(event.clientY) <= oy + 50) && parseInt(event.clientY) >= oy) {
+                    img1.style.top = oy + 50 + "px";
+                }
+                */
+            }
+        };
+    </script>
+</body>
+</html>
