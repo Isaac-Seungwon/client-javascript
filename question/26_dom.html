@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,9 +40,11 @@
 			width: 500px;
 			margin-top: 20px;
 		}
+
 		#tbl1 th {
 			background: #ddd;
 		}
+
 		#tbl1 th, #tbl1 td {
 			border: 1px solid gray;
 			padding: 4px;
@@ -55,12 +55,9 @@
 		#tbl1 th:nth-child(3) { width: 50px; }
 		#tbl1 th:nth-child(4) { width: 120px; }
 		#tbl1 th:nth-child(5) { width: 210px; }
-		
-		
-		
 	</style>
+
 	<script>
-		
 		var txtname, selage, rbgender1, rbgender2, txtaddress, btnadd, tbody1;
 		var num = 1;
 		
@@ -85,11 +82,9 @@
 					additem();
 				}
 			};
-			
 		};
 		
 		function additem() {
-			
 			if (txtname.value == "") {
 				txtname.focus();
 				return;
@@ -99,8 +94,7 @@
 				txtaddress.focus();
 				return;
 			}
-			
-			
+
 			if (tbody1.innerText == "등록된 항목이 없습니다.") {
 				tbody1.innerHTML = "";
 			}
@@ -136,15 +130,12 @@
 			
 			tbody1.innerHTML += row;
 			
-			
 			txtname.value = "";
 			selage.selectedIndex = 0;
 			rbgender1.checked = true;
 			txtaddress.value = "";
 			txtname.focus();
-			
 		}
-		
 	</script>
 </head>
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
@@ -159,7 +150,6 @@
 		<div><label for="txtaddress">주소 : </label><input type="text" id="txtaddress"></div>
 		<div><input type="button" id="btnadd" value="추가하기"></div>
 	</fieldset>
-	
 	
 	<table id="tbl1">
 		<thead>
@@ -177,7 +167,6 @@
 			</tr>
 		</tbody>
 	</table>
-
 		
 	<div style="display: none;">
 		<a href="https://drive.google.com/uc?export=download&id=1h8RmsHlJnc_zbfC4KPx7Ezb9ZyZXoBuA"></a>
@@ -188,7 +177,5 @@
 	<script>
 		// document.body.style.zoom = 1.5;
 	</script>
-
-
 </body>
 </html>

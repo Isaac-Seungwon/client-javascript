@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,16 +27,13 @@
 			display: block;
 		}
 	</style>
+
 	<script>
-		
 		window.onload = function() {
-			
 			var cell = document.getElementsByClassName("cell");
 			
 			for (var i=0; i<cell.length; i++) {
-				
 				cell[i].onmousedown = function() {
-									
 					var c = event.srcElement;
 					var n = parseInt(c.innerHTML);
 					
@@ -55,16 +50,13 @@
 						}
 						c.innerText = n;
 					}
-					
 				};
-				
 			}
-			
 		};
-		
 	</script>
 </head>
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
     <!--     
     모든 셀에 클릭(onmousedown) 이벤트를 추가해 카운트를 조작하시오.
     왼쪽 버튼 : 카운트 증가
@@ -109,7 +101,5 @@
 			<td class="cell">0</td>			
 		</tr>
 	</table>
-
 </body>
 </html>
-

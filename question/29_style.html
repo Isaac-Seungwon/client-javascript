@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,17 +17,20 @@
 </head>
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
 
-
+	<!--
+	문서를 클릭하면 해당 위치에 이미지를 추가하시오.
+	m01.png ~ m10.png 무작위로 추가하시오.
+	이미지를 최대 10개까지 출력하시오.
+	10개가 넘어가면 오래된 순서대로 삭제하시오.
+	-->
 
 	<script type="text/javascript">
-
 		var item;
 		var imgCount = 0;
 		var firstImage = null;
 		
 		window.onload = function() {		
 			window.onmousedown = function () {
-				
 				imgCount = 0;
 				var n = Math.floor(Math.random() * 9) + 1;
 				
@@ -40,7 +42,7 @@
 				
 				document.body.appendChild(img);
 	
-				//최대 10개까지만
+				//최대 10개
 				for (var i=0; i<document.body.children.length; i++) {
 					if (document.body.children[i].nodeName == "IMG") {
 						if (firstImage == null) {
@@ -54,17 +56,8 @@
 					document.body.removeChild(firstImage);
 					firstImage = null;
 				}
-	
 			}
 		};
 	</script>
 </body>
 </html>
-
-
-
-
-
-
-
-

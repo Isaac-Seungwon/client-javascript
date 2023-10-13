@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,8 +21,8 @@
 			overflow: hidden;
 		}
 	</style>
+	
 	<script>
-		
 		var cell;
 		var index = 0;
 		
@@ -34,7 +32,6 @@
 		};
 		
 		window.onkeydown = function() {
-
 			console.log(event.keyCode);
 			
 			clear();
@@ -62,20 +59,17 @@
 			}
 			
 			cell[index].bgColor = "gold";
-			
 		};
 		
 		function clear() {
-			
 			for (var i=0; i<cell.length; i++) {
 				cell[i].bgColor = "transparent";
 			}
-			
 		}
-		
 	</script>
 </head>
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
     <!--
     방향키에 맞춰 활성화된 셀을 이동하시오.
     상,하,좌,우
@@ -118,40 +112,5 @@
 			<td></td>
 		</tr>
 	</table>
-
-	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

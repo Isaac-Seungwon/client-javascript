@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +17,7 @@
 </head>
 <body>
     <!-- 색상과 이름을 입력하면 테이블에 추가하시오. -->
+	
 	<h1>테이블</h1>
 
 	<fieldset>
@@ -47,16 +46,13 @@
 		</tbody>
 	</table>
 
-
 	<script>
-	
 		var txtColor = document.getElementById("txtColor");
 		var txtName = document.getElementById("txtName");
 		var btnAdd = document.getElementById("btnAdd");
 		var tbody1 = document.getElementById("tbody1");
 
 		btnAdd.onclick = function() {
-
 			var row = "<tr>";
 			row += "<td>";
 			row += txtName.value;
@@ -71,9 +67,7 @@
 			//색 추가뒤에 입력 양식을 초기화
 			txtColor.value = "#000";
 			txtName.value = "";x
-
 		};
-
 
 		txtColor.onchange = function() {
 			txtName.focus();
@@ -84,8 +78,6 @@
 				btnAdd.click(); //버튼 클릭 / 에뮬레이터 함수
 			}
 		};
-
 	</script>
-
 </body>
 </html>

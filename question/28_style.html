@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +16,9 @@
         }
     </style>
 </head>
-
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
     <script type="text/javascript">
         /*
-    	
         .item {position:absolute;}
     
         1. 클릭
@@ -32,18 +29,16 @@
         3.5 B img.setAttribute("class", "item");
     	
         4. body.appendChild(img)
-    	
         */
+
         var item;
 
         window.onload = function () {
-
             window.onmousedown = function () {
-
                 img = document.createElement("img");
-
+                
                 img.setAttribute("class", "item");
-                img.setAttribute("src", "https://drive.google.com/uc?export=download&id=1IQUOwAk_vr5yH6LugqZprjdgeu8JkqZ7");
+                img.setAttribute("src", "../../asset/images/chromi.png");
 
                 img.style.left = (event.clientX - 64) + "px";
                 img.style.top = (event.clientY - 64) + "px";
@@ -54,7 +49,7 @@
     </script>
 
     <div style="display: none;">
-        <img src="https://drive.google.com/uc?export=download&id=1IQUOwAk_vr5yH6LugqZprjdgeu8JkqZ7">
+        <img src="../../asset/images/chromi.png">
     </div>
 </body>
 </html>

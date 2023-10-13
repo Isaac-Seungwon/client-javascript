@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,7 +83,6 @@
 	</table>
 
 	<script>
-
 		var title = document.getElementById("title");
 		var tbody1 = document.getElementById("tbody1");
 
@@ -96,7 +93,6 @@
 		year = now.getFullYear();
 		month = now.getMonth();
 
-
 		function start(year, month) {
 			var date = new Date(year, month, 1);
 
@@ -104,7 +100,6 @@
 			var firstDay = (new Date(date.getFullYear(), date.getMonth(), 1)).getDay(); //해당월 1일의 요일
 
 			title.textContent = date.getFullYear() + "." + (date.getMonth() + 1);
-
 
 			//공백 채우기
 			var temp = "";
@@ -142,7 +137,6 @@
 
 		start(year, month);
 
-
 		document.getElementById('btnnext').onclick = function() {
 			now.setMonth(now.getMonth() + 1);
 			year = now.getFullYear();
@@ -163,8 +157,6 @@
 			month = now.getMonth();
 			start(year, month);
 		};
-
 	</script>
-
 </body>
 </html>

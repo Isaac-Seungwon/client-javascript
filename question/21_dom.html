@@ -1,19 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="../asset/question.css">
-   <title>Document</title>
-   <style>
-	   	#tbl, #tbl td {
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/7121714adf.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../asset/question.css">
+	<title>Document</title>
+	<style>
+		#tbl, #tbl td {
 			border: 1px solid black;
 			border-collapse: collapse;
 		}
+
 		#tbl td {
 			width: 100px;
 			height: 100px;
@@ -23,13 +22,12 @@
 </head>
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
 
-    <!--
+	<!--
     방향키 조작에 따라 테이블을 행/열을 조작하시오.
     좌우 : 열 추가/삭제
     상하 : 행 추가/삭제
     셀에 숫자를 할당하시오.
     -->
-
 
 	<table id="tbl" class="table">
 		<tbody id="tbody1">
@@ -45,14 +43,12 @@
 	</table>
 
 	<script>
-
 		var tbody1 = document.getElementById("tbody1");
 		var row = 2;
 		var column = 2;
 		var no = 0;
 
-		window.onkeydown = function() {
-
+		window.onkeydown = function () {
 			no = 1;
 
 			if (event.keyCode == 39) {
@@ -80,21 +76,18 @@
 			tbody1.innerHTML = "";
 			var temp = "";
 
-			for (var i=0; i<row; i++) {
+			for (var i = 0; i < row; i++) {
 				temp = "<tr>";
-				for (var j=0; j<column; j++) {
+				for (var j = 0; j < column; j++) {
 					temp += "<td>";
 					temp += no;
-					temp += "</td>";			
+					temp += "</td>";
 					no++;
 				}
 				temp += "</tr>";
 				tbody1.innerHTML += temp;
 			}
 		}
-
 	</script>
-
 </body>
 </html>
-

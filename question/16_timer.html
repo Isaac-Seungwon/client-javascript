@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -119,14 +118,14 @@
 						console.log(formatnumber(n % 100).substr(0, 1));
 						console.log(formatnumber(n % 100).substr(1, 1));
 
-						img5.src = "images/" + formatnumber(n % 100).substr(0, 1) + ".png";
-						img6.src = "images/" + formatnumber(n % 100).substr(1, 1) + ".png";
+						img5.src = "../../asset/images/" + formatnumber(n % 100).substr(0, 1) + ".png";
+						img6.src = "../../asset/images/" + formatnumber(n % 100).substr(1, 1) + ".png";
 
-						img3.src = "images/" + formatnumber(n / 100 % 60).substr(0, 1) + ".png";
-						img4.src = "images/" + formatnumber(n / 100 % 60).substr(1, 1) + ".png";
+						img3.src = "../../asset/images/" + formatnumber(n / 100 % 60).substr(0, 1) + ".png";
+						img4.src = "../../asset/images/" + formatnumber(n / 100 % 60).substr(1, 1) + ".png";
 
-						img1.src = "images/" + formatnumber(n / 100 / 60).substr(0, 1) + ".png";
-						img2.src = "images/" + formatnumber(n / 100 / 60).substr(1, 1) + ".png";
+						img1.src = "../../asset/images/" + formatnumber(n / 100 / 60).substr(0, 1) + ".png";
+						img2.src = "../../asset/images/" + formatnumber(n / 100 / 60).substr(1, 1) + ".png";
 
 						n++;
 					}, 10);
@@ -165,14 +164,13 @@
 		}
 
 		function init() {
-			img1.src = "images/0.png";
-			img2.src = "images/0.png";
-			img3.src = "images/0.png";
-			img4.src = "images/0.png";
-			img5.src = "images/0.png";
-			img6.src = "images/0.png";
+			img1.src = "../../asset/images/0.png";
+			img2.src = "../../asset/images/0.png";
+			img3.src = "../../asset/images/0.png";
+			img4.src = "../../asset/images/0.png";
+			img5.src = "../../asset/images/0.png";
+			img6.src = "../../asset/images/0.png";
 		}
 	</script>
 </body>
-
 </html>

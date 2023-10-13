@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    <script>    
+        //화살표 함수 (Arrow Function)
+        //자바스크립트의 화살표 함수(Arrow Function)는 자바에서의 람다라고 생각하면 된다.
+        //자바에서 람다는 익명 객체의 추상 메소드를 표현하는 기술이었다면, 자바스크립트의 화살표 함수는 익명 함수를 표현하는 기술이다.
+        //자바보다 좀 더 간단하게 사용한다.
+
+        //1. 함수 선언문
+        function f1() {
+            console.log('f1');
+        };
+        f1();
+
+        //2. 함수 표현식(리터럴) == 익명 함수
+        function f2() {
+            console.log('f2_1')
+        };
+        f2();
+
+        //즉시 호출
+        (function () {
+            console.log('f2_1')
+        })();
+        /*
+        이런 식의 문법을 즉시 호출이라고 한다.
+        */
+
+        //3. 화살표 함수 == 익명 함수
+        /*
+        const f3 = function() {
+            console.log('f3');
+        };
+        f3();
+        */
+        const f3 = () => {
+            console.log('f3');
+        };
+        f3();
+
+        /*
+        앞의 인자 리스트와 실행 블럭만 남기고 중간을 화살표로 연결한다.
+        자바스크립트의 화살표는 '=>'이다.
+        */
+
+        //화살표 함수(람다)의 특징
+        const f4 = () => console.log('f4');
+        f4();
+        //실행문을 1줄로 작성하여 실행 블럭을 생략할 수 있다.
+
+        //매개변수
+        const f5 = (num) => console.log(num);
+        const f6 = num => console.log(num);
+        const f7 = (a, b) => console.log(a, b);
+
+        //반환값
+        const f8 = () => { return 100; };
+        const f9 = () => 100;
+        //return을 생략할 수 있다.
+
+
+        //화살표 함수의 사용
+        //콜백 함수
+        document.getElementById('btn1').onclick = function() {
+            alert('btn1');
+        };
+    
+        document.getElementById('btn1').onclick = () => {
+            alert('btn1');
+        };
+        //콜백 함수에 주로 익명 함수를 사용하는데, 이때 화살표 함수를 사용할 수 있다.
+
+        //이벤트 발생 객체의 정보 가져오기
+        //obj.onclick = function() {};
+        document.getElementById('btn1').onclick = function() {
+            //상대 표현
+            //alert(event.target.value);
+            //alert(event.srcElement.value);
+            //alert(event.currentTarget.value);
+            alert(this.value);
+
+            //절대 표현 (비추천)
+            //alert(document.getElementById('btn1').value);
+        };
+    
+        document.getElementById('btn2').onclick = () => {
+            //alert('btn1');
+            //alert(event.target.value);
+            //alert(event.srcElement.value);
+            //alert(event.currentTarget.value);
+            alert(this.value); //this > window 객체
+        };
+        //이벤트 발생 객체의 정보를 가져오고 싶다고 할 때 상대 표현과 절대 표현으로 가져올 수 있다.
+        //이벤트는 곧 멤버 메소드이기 때문에 this를 사용하여 출력할 수 있다.
+        //하지만 콜백 함수에서 this를 사용하는 것은 상황에 따라 달라질 수 있으므로 사용에 주의가 필요하다.
+        //화살표 함수는 어떤 식으로 사용(호출)되든 그 안에서의 this는 항상 window객체를 가리킨다.
+
+        
+        setTimeout(function() {
+
+        }, 1000);
+
+        setTimeout(() => {
+
+        }, 1000);
+
+        console.clear();
+
+
+
+        const list = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+        const flist = [ '사과', '포도', '딸기', '바나나', '귤', '앵두', '자두', '배', '참외', '수박', '복숭아' ];
+
+
+        //loop 사용
+        for (let i=0; i<list.length; i++) {
+            console.log(list[i]);
+        }
+
+        //프로퍼티 탐색
+        for (let p in list) {
+            console.log(p);
+        }
+
+        //forEach == 향상된 for문
+        //제어문이 아니라 메서드 형태로 제공한다.
+        //메서드이기 때문에 인자값을 요구하며, 인자값으로는 함수를 넣는다.
+        list.forEach(function (num) {
+            console.log(num);
+        });
+
+        list.forEach(num => console.log(num));
+
+        flist.forEach(f => console.log(f));
+
+        console.clear();
+
+        flist.forEach((f, index) => console.log(f, index));
+
+        console.clear();
+
+        //map()
+        //map은 가공 및 변환 가능을 한다.
+        //요소를 다른 값으로 변환하여 새로운 배열을 반환할 때 사용한다.
+
+        console.log(list.map(n => n % 2 == 0 ? '짝수' : '홀수'));
+
+        console.log(flist.map(item => item.length));
+    
+        flist.map(item => item.length).forEach(length => console.log(length));
+
+        
+        const names = [ 'Isaac', 'Sopia' ];
+
+        const olist1 = [];
+
+        for (let i=0; i<names.length; i++) {
+            const o1 = {
+                name: names[i],
+                age: 25,
+                address: '서울시'
+            };
+            olist1[i] = o1;
+        }
+
+        console.log(olist1);
+
+
+        const olist2 = names.map(name => {
+            return {
+                name: name,
+                age: 25,
+                address: '서울시'
+            };
+        });
+
+        console.log(olist2);
+
+        //객체를 생성하여 map으로 return값을 돌려주면 동일한 결과를 더 간단하게 출력할 수 있다.
+
+
+        //filter()
+        console.log(list.filter(num => num % 2 == 0));
+
+        console.log(flist.filter(item => item.length >= 3));
+
+
+        //find()
+        //요소 검색
+        console.log(flist.find(item => item.length >= 3));
+
+    </script>
+</body>
+</html>
